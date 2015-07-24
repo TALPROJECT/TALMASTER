@@ -1,6 +1,13 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope) {
+   
+    var dash=this;
+    var currentlist=[];
+    
+
+
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
@@ -17,18 +24,29 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats, ListLibrary) {
+.controller('ChatDetailCtrl', function($scope, $stateParams, Chats, ListLibrary, SongLibrary) {
+ 
   $scope.chat = Chats.get($stateParams.chatId);
-  $scope.lists=ListLibrary.all();
+  $scope.lists = ListLibrary.all();
+  $scope.chansons = SongLibrary.all();
+
   $scope.remove = function(list) {
     ListLibrary.remove(list);
   };
   
+  /* $scope.generateList= function(list){
+    var res =[];
+
+    for (var i = list.length - 1; i >= 0; i--) {
+      res[i]=chansons[lists.content[]i];
+    }
+    return res;
+  }; */
 
 })
-.controller('ListDetailCtrl', function($scope, ListLibrary, SongLibrary) {
+.controller('ListDetailCtrl', function($scope, $stateParams, ListLibrary, SongLibrary) {
   $scope.chansons=SongLibrary.all();
-  $scope.lists = ListLibrary.all();
+  $stateParams.list = ListLibrary.get($stateParams.listId);
   $scope.remove = function(list) {
     ListLibrary.remove(list);
   };

@@ -43,7 +43,7 @@ angular.module('starter.services', [])
 .factory('SongLibrary', function(){
 
 var chansons =[{
-  id: 0,
+    id: 0,
     name: 'Never Too Much',
     artist: 'Luther Vandroos',
     preview_url : 'https://p.scdn.co/mp3-preview/7a5b4002971319e124244094428c94ebe66bccf1',
@@ -56,8 +56,8 @@ var chansons =[{
     preview_url:'https://p.scdn.co/mp3-preview/bf7b5edcddeec3a704b77b504100f8565fca4d57',
     open_url : 'https://open.spotify.com/track/26ppQqlihAxkrwHv4NNlq0',
     face: 'http://www.vinyl-minded.com/images/6/671867.jpg'
-  },{
-  id: 2,
+  }, {
+    id: 2,
     name: 'Act Like You Know',
     artist: 'Fat Larry band',
     preview_url : 'https://p.scdn.co/mp3-preview/1507d2c0c115fd853efd548df33e3ca8e892c14d',
@@ -78,7 +78,7 @@ var chansons =[{
     open_url : 'https://open.spotify.com/album/2HPpGOkeO0y2I071Js9s1A',
     face: 'https://i.scdn.co/image/7241f947ea45d1cd2c9716adc94f85668e511dcf'
   }, {
-  id: 5,
+    id: 5,
     name: 'You Can t Always Get What You Want',
     artist: 'The Rolling Stones',
     preview_url : 'https://p.scdn.co/mp3-preview/75e92f88be509135ea97ba4cc7161f202d15f87a',
@@ -92,7 +92,7 @@ var chansons =[{
     open_url : 'https://open.spotify.com/track/3p7W5VvPBZmuvkagBE2RbR',
     face: 'https://i.scdn.co/image/26d8c4db7622f1adecbb7ffc28a4dcdd8be907ac'
   }, {
-  id: 7,
+    id: 7,
     name: 'Voyager',
     artist: 'Daft Punk',
     preview_url:'https://p.scdn.co/mp3-preview/90f22d693596f88ec9f07381eabe16de81032b7b',

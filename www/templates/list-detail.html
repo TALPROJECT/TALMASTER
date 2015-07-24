@@ -4,13 +4,14 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="Nom de la liste" class="list-detail-page">
+<ion-view view-title="{{list.name}}" class="list-detail-page">
   <ion-content class="padding">
   <div class="row responsive-md">
     <ion-item class="item-remove-animate item item-image col col-top" ng-repeat="song in chansons" type="item-text-wrap" href="{{song.preview_url}}">
         <img ng-src="{{song.face}}" class="image" >
         <h2>{{song.name}}</h2>
         <p>{{song.artist}}</p>
+        <p>{{list.id}}</p>
       </div>
   </ion-content>
 </ion-view>
