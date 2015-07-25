@@ -69,6 +69,19 @@ $scope.account = function(){
   $scope.remove = function(list) {
     ListLibrary.remove(list);
   };
+
+  /* $scope.playSong = function(song) {
+    $scope.defer = $q.defer();
+    $scope.media = new Audio(song.preview_url);
+
+    $scope.media.addEventListener("loadeddata", function(){
+       $scope.defer.resolve();
+     });
+
+  $scope.media.play();
+  return $scope.defer.promise;
+}   NE MARCHE PAS, DOIT-ON METTRE $SCOPE POUR TOUTES LES VAR DEFINIES ICI ?*/
+
 })
 .controller('AccountCtrl', function($scope, Chats, Profil) {
   $scope.settings = {

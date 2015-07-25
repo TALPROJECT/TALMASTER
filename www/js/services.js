@@ -41,6 +41,7 @@ angular.module('starter.services', [])
   };
 
 })
+
 .factory('Profil', function() {
   // Might use a resource here that returns a JSON array
 
@@ -56,6 +57,7 @@ angular.module('starter.services', [])
       return profils;
     }
   };
+
 })
 
 
@@ -147,6 +149,8 @@ var chansons =[{
       return null;
     }
   };
+
+  
 
 })
 
