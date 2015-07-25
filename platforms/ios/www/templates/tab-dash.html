@@ -1,20 +1,24 @@
-<ion-view view-title="Share a List">
+<ion-view view-title="Share a List" class="tab-dash"> 
   <ion-content class="padding">
     <div class="list card">
-      <div class="item item-divider" >  <label class="item item-input">
-            <input type="text" ng-model="list.Title" placeholder="Your title">
+      <div class="item item-divider" >  <label class="item item-input"> 
+            <input type="text" placeholder="Your research" ng-model="myTitle">
+            <div class = "addSongButton ion-android-add-circle"> 
+            </div>
+
           </label></div>
-      <div class="item item-body" >
-        <div >
-          There is a fire in  YOOOOOO <b>sector 3</b>
-        </div>
+      
       </div>
     </div>
-    <div class="list card">
-      <div class="item item-divider">Health</div>
+
+    <div class = "addSongButton ion-android-add-circle" ng-click="addNewSong(myTitle)"> 
+            </div>
+
+    <div class="list card" ng-repeat="item in currentList">
+      <div class="item item-divider"> {{item}} </div>
       <div class="item item-body">
         <div>
-          You ate an apple today!
+          {{item.title}}
         </div>
       </div>
     </div>

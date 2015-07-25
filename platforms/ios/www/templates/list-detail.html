@@ -4,8 +4,9 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="Nom de la liste" class="list-detail-page">
+<ion-view view-title="{{list.name}}" class="list-detail-page">
   <ion-content class="padding">
+
 
   <div class="row" ng-repeat="song in chansons" ng-if="$index % 3 === 0" >
         <div class="col pochette" ng-if="$index < chansons.length" >

@@ -1,5 +1,3 @@
-/* Empty. Add your own CSS if you like */
-
 
 .list-detail-page .nomchanson{
 	font-size: 3vw;
@@ -9,3 +7,30 @@
 .list-detail-page .pochette{
 	line-height:0px;
 }
+
+
+.tab-dash .ion-android-add-circle{
+	font-size: 25px;
+	margin-right: 15px;
+}
+.ion-ios-cog-outline{
+	font-size: 35px;
+}
+
+.profilname {
+	font-size: 19px;
+	margin-left: 100px;
+}
+.profilpic{
+	width: 100px;
+	float: left;
+	border-radius: 50px;
+	margin: 15px;
+
+}
+.email {
+	font-size: 15px;
+	font-style: italic;
+}
+
+

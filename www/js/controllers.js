@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
+.controller('DashCtrl', function($scope, $state) {
    
     $scope.inArray= function(string, array){
       var result = false;
@@ -20,7 +20,9 @@ angular.module('starter.controllers', [])
       }
     };
 
-
+$scope.account = function(){
+    $state.go('tab.account');
+  };
 })
 
 .controller('ChatsCtrl', function($scope, Chats, $state) {
@@ -73,7 +75,26 @@ angular.module('starter.controllers', [])
     enableFriends: true
   };
   $scope.profils = Profil.all();
-  
+  $scope.showEdit = false;
+  $scope.editNameClick = function(){
+    $scope.showEdit = true;
+  };
+  $scope.addNewName=function(myName){
+      
+        $scope.profils.name=myName;
+        $scope.showEdit = false;
+      
+    };
+  $scope.showEditFav = false;
+  $scope.editFavClick = function(){
+    $scope.showEditFav = true;
+  };
+  $scope.addNewFav=function(myFav){
+      
+        $scope.profils.FavoritedSong=myFav;
+        $scope.showEditFav = false;
+      
+    };
 })
 .controller('FavoritesCtrl', function($scope, $state) {
   $scope.settings = {

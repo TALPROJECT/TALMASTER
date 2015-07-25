@@ -45,24 +45,12 @@ angular.module('starter.services', [])
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var profils = [{
-    id: 0,
+  var profils = {
     name: 'Anthony Tuil',
     FavoritedSong: 'Kuar',
     face: 'https://pbs.twimg.com/profile_images/575685384375422977/QI0yLbfx.jpeg',
     email: 'antholhuileux@gmail.com'
-  }, {
-    id: 1,
-    name: 'Alexandre Attia',
-    lastList: 'Sunshine in Da Evening',
-    face: 'https://media.licdn.com/media/AAEAAQAAAAAAAAKyAAAAJGU4ODY2YWYxLThiMjktNGMxYS1iMWY5LTE1NmJmMTI3ZDIxOQ.jpg',
-    email: 'alexandre.attia@wanadoo.fr'
-  }, {
-    id: 2,
-    name: 'Le Krull',
-    lastList: 'Doucement le matin ...',
-    face: 'http://www.unmondeailleurs.net/wp-content/uploads/antillais_guadeloupe.jpg'
-  }];
+  };
     return {
     all: function() {
       return profils;

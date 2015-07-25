@@ -1,5 +1,3 @@
-/* Empty. Add your own CSS if you like */
-
 
 .list-detail-page .nomchanson{
 	font-size: 3vw;
@@ -10,11 +8,11 @@
 	line-height:0px;
 }
 
-<<<<<<< HEAD
+
 .tab-dash .ion-android-add-circle{
 	font-size: 25px;
 	margin-right: 15px;
-=======
+}
 .ion-ios-cog-outline{
 	font-size: 35px;
 }
@@ -34,4 +32,9 @@
 	font-size: 15px;
 	font-style: italic;
 }
->>>>>>> origin/master
+
+.favsong{
+	display: inline-block;
+	
+	width: 40vw;
+}
