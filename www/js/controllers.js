@@ -2,9 +2,23 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {
    
-    var dash=this;
-    var currentlist=[];
-    
+    $scope.inArray= function(string, array){
+      var result = false;
+      for(i=0; i<array.length; i++){
+        if(array[i] == string){
+            result = true;
+        }
+      }
+    return result;
+    }
+
+    $scope.currentList=["titre0", "titre1"];
+
+    $scope.addNewSong=function(newSong){
+      if( !$scope.inArray(newSong, $scope.currentList) || $scope.currentList.length>11){
+        $scope.currentList.push(newSong);
+      }
+    };
 
 
 })
