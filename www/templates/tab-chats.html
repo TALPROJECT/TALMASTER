@@ -1,4 +1,8 @@
 <ion-view view-title="Audio Feed">
+<ion-nav-buttons side="right">
+    <a class="ion-ios-cog-outline" ng-click="account()">
+    </a>
+</ion-nav-buttons>    
   <ion-content>
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
