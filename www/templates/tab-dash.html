@@ -1,8 +1,5 @@
 <ion-view view-title="Share a List" class="tab-dash"> 
-<ion-nav-buttons side="right">
-    <a class="ion-ios-cog-outline" ng-click="account()">
-    </a>
-</ion-nav-buttons> 
+
   <ion-content class="padding">
     <div class="list card">
       <div class="item item-divider" >  <label class="item item-input"> 
@@ -18,7 +15,7 @@
     <div class = "addSongButton ion-android-add-circle" ng-click="addNewSong(myTitle)"> 
             </div>
 
-    <div class="list card" ng-repeat="item in currentList">
+    <div class="list card" ng-repeat="item in currentList"  class="animate-repeat">
       <div class="item item-divider"> {{item}} </div>
       <div class="item item-body">
         <div>
@@ -26,13 +23,6 @@
         </div>
       </div>
     </div>
-    <div class="list card">
-      <div class="item item-divider">Upcoming</div>
-      <div class="item item-body">
-        <div>
-          You have <b>29</b> meetings on your calendar tomorrow.
-        </div>
-      </div>
-    </div>
+    
   </ion-content>
 </ion-view>

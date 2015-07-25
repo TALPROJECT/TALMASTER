@@ -15,7 +15,7 @@
         </h2>
         <h3 class="email"> {{profils.email}} </h3>
         <br><br>
-        <p> My Favorite Song is {{profils.FavoritedSong}} <a class="ion-edit" ng-click="editFavClick()"> </a> 
+        <p class="favsong"> My Favorite Song is {{profils.FavoritedSong}} <a class="ion-edit" ng-click="editFavClick()"> </a> 
           <div class="favsong" ng-show="showEditFav">  <input class="favsong" type="text" placeholder="Your Favorite Song" ng-model="myFav" > <div class = "ion-ios-color-wand" ng-click="addNewFav(myFav)"> </input>
             </div> </p>
           </div>
