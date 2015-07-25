@@ -77,6 +77,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+.state('tab.account', {
+    url: '/account',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/tab-account.html',
+        controller: 'AccountCtrl'
+      }
+    }
+  })
   .state('tab.favorites', {
     url: '/favorites',
     views: {

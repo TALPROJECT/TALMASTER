@@ -1,0 +1,19 @@
+<ion-view view-title="My Account" class "myaccount">
+<ion-nav-back-button>
+      </ion-nav-back-button>
+<ion-content>
+
+      <ion type="item-text-wrap">
+        <img class ="profilpic" ng-src="{{profils[0].face}}">
+        <br>
+        <h2 class="profilname">{{profils[0].name}} <a class="ion-edit" ng-click="editname()"> </a> </h2>
+        <h3 class="email"> {{profils[0].email}} </h3>
+        <br><br>
+        <p class "favsong"> My Favorited Song is {{profils[0].FavoritedSong}} <a class="ion-edit" ng-click="editname()"> </a>
+       <!-- <ion-toggle  ng-model="settings.enableFriends">
+        Enable Friends
+    </ion-toggle>-->
+    
+      </ion>
+  </ion-content>    
+</ion-view>
