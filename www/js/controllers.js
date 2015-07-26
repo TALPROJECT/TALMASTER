@@ -87,7 +87,7 @@ $scope.account = function(){
     console.log($index);
     $scope.selectedIndex = $index;
   };
-<<<<<<< HEAD
+
   
 
   $scope.refreshBlurring= function(index){
@@ -103,8 +103,7 @@ $scope.account = function(){
 
   };
 
-=======
->>>>>>> origin/master
+
   $scope.playSong = function(song) {
     if ($scope.media.src===song.preview_url && $scope.isPlaying){
       $scope.media.pause();
@@ -192,11 +191,39 @@ $scope.account = function(){
       
     };
 })
-.controller('FavoritesCtrl', function($scope, $state) {
+.controller('FavoritesCtrl', function($scope, $state, SongLibrary,$window) {
   $scope.settings = {
     enableFriends: true
   };
   $scope.account = function(){
     $state.go('tab.account');
   };
+
+
+
+  $scope.favorites = SongLibrary.all();
+  
+  $scope.removeSong = function(song, index) {
+    $scope.favorites.splice(index, 1);
+  };
+  $scope.openSong=function(song){
+    $window.open(song.open_url,"_system");
+  };
+  $scope.isPlaying=false;
+  $scope.media = document.createElement('audio');
+  $scope.playSong = function(song) {
+    if ($scope.media.src===song.preview_url && $scope.isPlaying){
+      $scope.media.pause();
+      $scope.isPlaying = false;
+      return null;
+    }
+
+    else{
+      $scope.media.src = song.preview_url;
+      $scope.media.play();
+      $scope.isPlaying = true;
+
+    }
+
+  };
 });

@@ -13,3 +13,15 @@
 2015-07-25 04:35:07.666 talproject[10356:5333261] [CDVTimer][TotalPluginStartup] 0.227034ms
 2015-07-25 04:35:07.731 talproject[10356:5333261] Resetting plugins due to page load.
 2015-07-25 04:35:07.844 talproject[10356:5333261] Finished load of: file:///Users/alexandreattia/Library/Developer/CoreSimulator/Devices/7D3271DB-085D-4993-8018-A5A10D176FF8/data/Containers/Bundle/Application/4DDD564A-870E-4ED1-A6FF-391E2F432D10/talproject.app/www/index.html#/tab/dash
+2015-07-26 18:08:40.395 talproject[14496:5800006] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-26 18:08:40.398 talproject[14496:5800006] Multi-tasking -> Device: YES, App: YES
+2015-07-26 18:08:40.407 talproject[14496:5800006] Unlimited access to network resources
+2015-07-26 18:08:40.594 talproject[14496:5800006] [CDVTimer][keyboard] 0.055015ms
+2015-07-26 18:08:40.595 talproject[14496:5800006] [CDVTimer][TotalPluginStartup] 0.202000ms
+2015-07-26 18:08:40.741 talproject[14496:5800006] Resetting plugins due to page load.
+2015-07-26 18:08:40.979 talproject[14496:5800006] Finished load of: file:///Users/alexandreattia/Library/Developer/CoreSimulator/Devices/7D3271DB-085D-4993-8018-A5A10D176FF8/data/Containers/Bundle/Application/4A7B4BEE-FFBF-4144-942B-F972B35E1436/talproject.app/www/index.html#/tab/dash
+Jul 26 18:09:02 MBPdeAlexandre.home rtcreporting[14496] <Info>: logging starts...
+Jul 26 18:09:02 MBPdeAlexandre.home rtcreporting[14496] <Debug>: setMessageLoggingBlock: called
+Jul 26 18:09:06 MBPdeAlexandre.home rtcreporting[14496] <Debug>: setMessageLoggingBlock: called
+Jul 26 18:09:10 MBPdeAlexandre.home rtcreporting[14496] <Debug>: setMessageLoggingBlock: called
+Jul 26 18:09:17 MBPdeAlexandre.home rtcreporting[14496] <Debug>: setMessageLoggingBlock: called
