@@ -15,8 +15,11 @@
         </h2>
         <h3 class="email"> {{profils.email}} </h3>
         <br><br>
-        <p class "favsong"> My Favorited Song is {{profils.FavoritedSong}} <a class="ion-edit" ng-click="editname()"> </a>
-        <p> {{showEdit}} </p>
+        <p class="favsong"> My Favorite Song is {{profils.FavoritedSong}} <a class="ion-edit" ng-click="editFavClick()"> </a> 
+          <div class="favsong" ng-show="showEditFav">  <input class="favsong" type="text" placeholder="Your Favorite Song" ng-model="myFav" > <div class = "ion-ios-color-wand" ng-click="addNewFav(myFav)"> </input>
+            </div> </p>
+          </div>
+       
        <!-- <ion-toggle  ng-model="settings.enableFriends">
         Enable Friends
     </ion-toggle>-->

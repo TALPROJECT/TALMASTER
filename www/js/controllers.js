@@ -108,6 +108,10 @@ angular.module('starter.controllers', [])
     console.log($index);
     $scope.selectedIndex = $index;
   };
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
   
 
   $scope.refreshBlurring= function(index){
@@ -211,11 +215,39 @@ angular.module('starter.controllers', [])
       
     };
 })
-.controller('FavoritesCtrl', function($scope, $state) {
+.controller('FavoritesCtrl', function($scope, $state, SongLibrary,$window) {
   $scope.settings = {
     enableFriends: true
   };
   $scope.account = function(){
     $state.go('tab.account');
   };
+
+
+
+  $scope.favorites = SongLibrary.all();
+  
+  $scope.removeSong = function(song, index) {
+    $scope.favorites.splice(index, 1);
+  };
+  $scope.openSong=function(song){
+    $window.open(song.open_url,"_system");
+  };
+  $scope.isPlaying=false;
+  $scope.media = document.createElement('audio');
+  $scope.playSong = function(song) {
+    if ($scope.media.src===song.preview_url && $scope.isPlaying){
+      $scope.media.pause();
+      $scope.isPlaying = false;
+      return null;
+    }
+
+    else{
+      $scope.media.src = song.preview_url;
+      $scope.media.play();
+      $scope.isPlaying = true;
+
+    }
+
+  };
 });

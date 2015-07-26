@@ -5,7 +5,8 @@
 }
 
 .list-detail-page .pochette{
-	line-height:0px;
+	line-height:5px;
+
 }
 
 
@@ -33,4 +34,38 @@
 	font-style: italic;
 }
 
+.favsong{
 
+	padding-left: 2vw;
+	width: 40vw;
+}
+.base-class {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition:all 0.5s linear ;
+}
+
+.base-class.my-class {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.1s;
+  transition:all cubic-bezier(0.42, 0.0, 1.0, 1.0) 0.5s;
+  filter: blur(5px); 
+ -webkit-filter: blur(5px);
+  opacity: 0.45; 
+}
+
+.addSongButton{
+	margin-left: 50vw;
+}
+
+.jaquette{
+    display: -webkit-flex;
+    height: 20vw;
+    width: 20vw;
+    margin-left: 3vw;
+}
+
+.myitem{
+	border-radius: 10px;
+	border-width: 1px;
+	border-color: black;
+	border-collapse: inherit;
+}

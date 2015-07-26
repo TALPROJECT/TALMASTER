@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
+.controller('DashCtrl', function($scope, $state) {
    
     $scope.inArray= function(string, array){
       var result = false;
@@ -12,15 +12,26 @@ angular.module('starter.controllers', [])
     return result;
     }
 
-    $scope.currentList=["titre0", "titre1"];
+    $scope.currentList=[{
+    name : "titre0",
+    artist :"",
+    face :"http://www.dschool.fr/wp-content/uploads/2015/06/EliottJabes.jpg" 
+    },{ 
+    name:  "plus",
+    artist:"",
+    face :"img/plus.png"
+  }];
 
     $scope.addNewSong=function(newSong){
-      if( !$scope.inArray(newSong, $scope.currentList) || $scope.currentList.length>11){
+      if( !($scope.inArray(newSong, $scope.currentList) || $scope.currentList.length>11)){
         $scope.currentList.push(newSong);
+        $scope.currentList.newSong.face="http://www.dschool.fr/wp-content/uploads/2015/06/EliottJabes.jpg";
       }
     };
 
-
+$scope.account = function(){
+    $state.go('tab.account');
+  };
 })
 
 .controller('ChatsCtrl', function($scope, Chats, $state) {
@@ -64,10 +75,96 @@ angular.module('starter.controllers', [])
 .controller('ListDetailCtrl', function($scope, $stateParams, ListLibrary, SongLibrary) {
   $scope.chansons=SongLibrary.all();
   $stateParams.list = ListLibrary.get($stateParams.listId);
+
+  $scope.imageClass=['','','','','','','','','','','','','','']; // va servir à l'affichage de l'image blurred
+
   $scope.remove = function(list) {
     ListLibrary.remove(list);
   };
+  $scope.selectedIndex = -1; 
+
+  $scope.itemClicked = function ($index) {
+    console.log($index);
+    $scope.selectedIndex = $index;
+  };
+
+  
+
+  $scope.refreshBlurring= function(index){
+    if ($scope.imageClass[index]=='my-class'){
+      $scope.imageClass=['','','','','','','','','','','','','',''];
+
+    }
+
+    else {
+    $scope.imageClass=['','','','','','','','','','','','','',''];
+    $scope.imageClass[index]='my-class';
+    }
+
+  };
+
+
+  $scope.playSong = function(song) {
+    if ($scope.media.src===song.preview_url && $scope.isPlaying){
+      $scope.media.pause();
+      $scope.isPlaying = false;
+    }
+
+    else{
+      $scope.media.src = song.preview_url;
+      $scope.media.play();
+      $scope.isPlaying = true;
+    }
+
+  };
+ 
+  /*$scope.playSong = function(song) {
+    $scope.defer = $q.defer();
+    $scope.media = new Audio(song.preview_url);
+
+    $scope.media.addEventListener("loadeddata", function(){
+       $scope.defer.resolve();
+     });
+
+  $scope.media.play();
+  return $scope.defer.promise;
+}   NE MARCHE PAS, DOIT-ON METTRE $SCOPE POUR TOUTES LES VAR DEFINIES ICI ?*/
+
+  $scope.isPlaying=false;
+  $scope.media = document.createElement('audio');
+  
+  $scope.playSong = function(song) {
+    if ($scope.media.src===song.preview_url && $scope.isPlaying){
+      $scope.media.pause();
+      $scope.isPlaying = false;
+      return null;
+    }
+
+    else{
+      $scope.media.src = song.preview_url;
+      $scope.media.play();
+      $scope.isPlaying = true;
+
+    }
+
+  };
+
+
+  $scope.stopSong = function() {
+    $scope.media.pause();
+    $scope.isPlaying = false;
+  };
+  /*$scope.audio.addEventListener('ended', function() {
+    $scope.$apply(function() {
+      $scope.stopSong()
+    });
+  });*/
+
+
 })
+
+
+
 .controller('AccountCtrl', function($scope, Chats, Profil) {
   $scope.settings = {
     enableFriends: true
@@ -81,6 +178,16 @@ angular.module('starter.controllers', [])
       
         $scope.profils.name=myName;
         $scope.showEdit = false;
+      
+    };
+  $scope.showEditFav = false;
+  $scope.editFavClick = function(){
+    $scope.showEditFav = true;
+  };
+  $scope.addNewFav=function(myFav){
+      
+        $scope.profils.FavoritedSong=myFav;
+        $scope.showEditFav = false;
       
     };
 })

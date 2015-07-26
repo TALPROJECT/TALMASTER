@@ -6,25 +6,29 @@
 -->
 <ion-view view-title="{{list.name}}" class="list-detail-page">
   <ion-content class="padding">
-
-
+<!--
   <div class="row" ng-repeat="song in chansons" ng-if="$index % 3 === 0" >
         <div class="col pochette" ng-if="$index < chansons.length" >
-            <img ng-src="{{chansons[$index].face}}" width="100%" href="{{chansons[$index].preview_url}}">
+            <img ng-src="{{chansons[$index].face}}" width="100%" ng-click="playSong(chansons[$index])">
             <h2 class="nomchanson">{{chansons[$index].name}}</h2>
         <p >{{chansons[$index].artist}}</p>
         </div>
         <div class="col pochette" ng-if="$index + 1 < chansons.length">
-            <img ng-src="{{chansons[$index + 1].face}}" width="100%" />
+        <img ng-src="{{chansons[$index + 1].face}}" width="100%" ng-click="playSong(chansons[$index+1])"/>
             <h2 class="nomchanson">{{chansons[$index + 1].name}}</h2>
         <p>{{chansons[$index + 1].artist}}</p>
         </div>
         <div class="col pochette" ng-if="$index + 2 < chansons.length">
-            <img ng-src="{{chansons[$index + 2].face}}" width="100%" />
+        <img ng-src="{{chansons[$index + 2].face}}" width="100%" ng-click="playSong(chansons[$index+2])"/>
             <h2 class="nomchanson">{{chansons[$index + 2].name}}</h2>
         <p>{{chansons[$index + 2].artist}}</p>
         </div>
-        
-    </div>
+    </div> 
+  -->
+
+    <img collection-repeat="song in chansons" item-height="25%" item-width="33%"
+         ng-src="{{song.face}}" ng-click="playSong(song); refreshBlurring($index)" 
+         class="base-class" ng-class="imageClass[$index]" >
+      
   </ion-content>
 </ion-view>
