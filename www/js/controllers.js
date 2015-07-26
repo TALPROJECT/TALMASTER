@@ -15,7 +15,7 @@ angular.module('starter.controllers', [])
     $scope.currentList=["titre0", "titre1"];
 
     $scope.addNewSong=function(newSong){
-      if( !$scope.inArray(newSong, $scope.currentList) || $scope.currentList.length>11){
+      if( !($scope.inArray(newSong, $scope.currentList) || $scope.currentList.length>11)){
         $scope.currentList.push(newSong);
       }
     };
@@ -70,7 +70,7 @@ $scope.account = function(){
     ListLibrary.remove(list);
   };
 
-  /* $scope.playSong = function(song) {
+  /*$scope.playSong = function(song) {
     $scope.defer = $q.defer();
     $scope.media = new Audio(song.preview_url);
 
@@ -82,7 +82,38 @@ $scope.account = function(){
   return $scope.defer.promise;
 }   NE MARCHE PAS, DOIT-ON METTRE $SCOPE POUR TOUTES LES VAR DEFINIES ICI ?*/
 
+  $scope.isPlaying=false;
+  $scope.media = document.createElement('audio');
+  
+  $scope.playSong = function(song) {
+    if ($scope.media.src===song.preview_url && $scope.isPlaying){
+      $scope.media.pause();
+      $scope.isPlaying = false;
+    }
+
+    else{
+      $scope.media.src = song.preview_url;
+      $scope.media.play();
+      $scope.isPlaying = true;
+    }
+
+  };
+
+  $scope.stopSong = function() {
+    $scope.media.pause();
+    $scope.isPlaying = false;
+  };
+  /*$scope.audio.addEventListener('ended', function() {
+    $scope.$apply(function() {
+      $scope.stopSong()
+    });
+  });*/
+
+
 })
+
+
+
 .controller('AccountCtrl', function($scope, Chats, Profil) {
   $scope.settings = {
     enableFriends: true
