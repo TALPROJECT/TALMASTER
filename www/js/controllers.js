@@ -20,9 +20,13 @@ angular.module('starter.controllers', [])
       }
     };
 
-$scope.account = function(){
-    $state.go('tab.account');
-  };
+  $scope.account = function(){
+      $state.go('tab.account');
+    };
+
+  $scope.shouldShowDelete = false;
+  $scope.shouldShowReorder = false;
+  $scope.listCanSwipe = true
 })
 
 .controller('ChatsCtrl', function($scope, Chats, $state) {
