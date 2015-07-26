@@ -12,6 +12,16 @@ angular.module('starter.controllers', [])
     return result;
     }
 
+    $scope.inList = function(string, list){
+      var result = false;
+      for(i=0; i<list.length; i++){
+        if(list[i].name == string){
+            result = true;
+        }
+      }
+    return result;
+    }
+
     $scope.currentList=[{
     name : "titre0",
     artist :"",
@@ -19,20 +29,30 @@ angular.module('starter.controllers', [])
     },{ 
     name:  "plus",
     artist:"",
-    face :"img/plus.png"
-  }];
+    face :"img/plus.png",
+  
+    }];
+
+    $scope.swapIndexes = function (array, index1, index2){
+      var tempArray = array;
+      array[index1]=tempArray[index2];
+      array[index2]=tempArray[index1];
+    };
 
     $scope.addNewSong=function(newSong){
-      if( !($scope.inArray(newSong, $scope.currentList) || $scope.currentList.length>11)){
-        $scope.currentList.push(newSong);
-        $scope.currentList.newSong.face="http://www.dschool.fr/wp-content/uploads/2015/06/EliottJabes.jpg";
+      if( !($scope.inList(newSong, $scope.currentList) || $scope.currentList.length>11)){
+        $scope.currentList.splice($scope.currentList.length-1, 0,{
+          name : newSong,
+          artist : 'Artist of' + newSong,
+          face :"https://static9.viadeo-static.com/servlet/photo?memberId=0021nmwfnm67e5l1&height=185&width=140&ts=1416406120000"});
       }
     };
 
-$scope.account = function(){
-    $state.go('tab.account');
-  };
+    $scope.account = function(){
+     $state.go('tab.account');
+    };
 })
+
 
 .controller('ChatsCtrl', function($scope, Chats, $state) {
   // With the new view caching in Ionic, Controllers are only called
@@ -72,6 +92,7 @@ $scope.account = function(){
   }; */
 
 })
+
 .controller('ListDetailCtrl', function($scope, $stateParams, ListLibrary, SongLibrary) {
   $scope.chansons=SongLibrary.all();
   $stateParams.list = ListLibrary.get($stateParams.listId);
@@ -87,7 +108,6 @@ $scope.account = function(){
     console.log($index);
     $scope.selectedIndex = $index;
   };
-<<<<<<< HEAD
   
 
   $scope.refreshBlurring= function(index){
@@ -103,8 +123,7 @@ $scope.account = function(){
 
   };
 
-=======
->>>>>>> origin/master
+
   $scope.playSong = function(song) {
     if ($scope.media.src===song.preview_url && $scope.isPlaying){
       $scope.media.pause();

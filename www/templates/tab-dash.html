@@ -7,7 +7,7 @@
           
           </label></div>
       </div>
-<div class = "addSongButton ion-android-add-circle" ng-click="addNewSong(myTitle)"> </div>
+<div class = "addSongButton ion-android-add-circle"  ng-click="addNewSong(myTitle);" > </div>
     </div>
 
     
@@ -40,8 +40,8 @@
   </ion-item>
 </ion-list>
 -->
-<img collection-repeat="item in currentList" item-height="25%" item-width="33%"
-         ng-src="{{item.face}}" >
+<img collection-repeat="song in currentList" item-height="25%" item-width="33%"
+         ng-src="{{song.face}}">
 
   </ion-content>
 </ion-view>
