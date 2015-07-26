@@ -70,6 +70,9 @@ angular.module('starter.controllers', [])
 .controller('ListDetailCtrl', function($scope, $stateParams, ListLibrary, SongLibrary) {
   $scope.chansons=SongLibrary.all();
   $stateParams.list = ListLibrary.get($stateParams.listId);
+
+  $scope.imageClass=['','','','','','','','','','','','','','']; // va servir à l'affichage de l'image blurred
+
   $scope.remove = function(list) {
     ListLibrary.remove(list);
   };
@@ -79,6 +82,20 @@ angular.module('starter.controllers', [])
     $scope.selectedIndex = $index;
   };
   
+
+  $scope.refreshBlurring= function(index){
+    if ($scope.imageClass[index]=='my-class'){
+      $scope.imageClass=['','','','','','','','','','','','','',''];
+
+    }
+
+    else {
+    $scope.imageClass=['','','','','','','','','','','','','',''];
+    $scope.imageClass[index]='my-class';
+    }
+
+  };
+
   $scope.playSong = function(song) {
     if ($scope.media.src===song.preview_url && $scope.isPlaying){
       $scope.media.pause();
@@ -112,12 +129,14 @@ angular.module('starter.controllers', [])
     if ($scope.media.src===song.preview_url && $scope.isPlaying){
       $scope.media.pause();
       $scope.isPlaying = false;
+      return null;
     }
 
     else{
       $scope.media.src = song.preview_url;
       $scope.media.play();
       $scope.isPlaying = true;
+
     }
 
   };

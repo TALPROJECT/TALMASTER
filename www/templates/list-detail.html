@@ -27,7 +27,8 @@
   -->
 
     <img collection-repeat="song in chansons" item-height="25%" item-width="33%"
-         ng-src="{{song.face}}" ng-click="playSong(song); myVar='my-class'" class="base-class" ng-class="myVar" >
+         ng-src="{{song.face}}" ng-click="playSong(song); refreshBlurring($index)" 
+         class="base-class" ng-class="imageClass[$index]" >
       
   </ion-content>
 </ion-view>
