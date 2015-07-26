@@ -74,6 +74,25 @@ angular.module('starter.controllers', [])
     ListLibrary.remove(list);
   };
 
+  $scope.itemClicked = function ($index) {
+    console.log($index);
+    $scope.selectedIndex = $index;
+  };
+  
+  $scope.playSong = function(song) {
+    if ($scope.media.src===song.preview_url && $scope.isPlaying){
+      $scope.media.pause();
+      $scope.isPlaying = false;
+    }
+
+    else{
+      $scope.media.src = song.preview_url;
+      $scope.media.play();
+      $scope.isPlaying = true;
+    }
+
+  };
+ 
   /*$scope.playSong = function(song) {
     $scope.defer = $q.defer();
     $scope.media = new Audio(song.preview_url);
@@ -102,6 +121,7 @@ angular.module('starter.controllers', [])
     }
 
   };
+
 
   $scope.stopSong = function() {
     $scope.media.pause();

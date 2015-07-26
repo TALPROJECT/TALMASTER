@@ -6,7 +6,7 @@
 -->
 <ion-view view-title="{{list.name}}" class="list-detail-page">
   <ion-content class="padding">
-
+<!--
   <div class="row" ng-repeat="song in chansons" ng-if="$index % 3 === 0" >
         <div class="col pochette" ng-if="$index < chansons.length" >
             <img ng-src="{{chansons[$index].face}}" width="100%" ng-click="playSong(chansons[$index])">
@@ -23,7 +23,11 @@
             <h2 class="nomchanson">{{chansons[$index + 2].name}}</h2>
         <p>{{chansons[$index + 2].artist}}</p>
         </div>
-        
-    </div>
+    </div> 
+  -->
+
+    <img collection-repeat="song in chansons" item-height="25%" item-width="33%"
+         ng-src="{{song.face}}" ng-click="playSong(song); myVar='my-class'" class="base-class" ng-class="myVar" >
+      
   </ion-content>
 </ion-view>
