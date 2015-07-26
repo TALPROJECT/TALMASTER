@@ -1,26 +1,25 @@
 <ion-view view-title="Share a List" class="tab-dash"> 
 
   <ion-content class="padding">
-    <div class="list card">
+    <div class=" card">
       <div class="item item-divider" >  <label class="item item-input"> 
             <input type="text" placeholder="Your research" ng-model="myTitle">
           
           </label></div>
-      
       </div>
+<div class = "addSongButton ion-android-add-circle" ng-click="addNewSong(myTitle)"> </div>
     </div>
 
-    <div class = "addSongButton ion-android-add-circle" ng-click="addNewSong(myTitle)"> 
-            </div>
+    
 
-    <!-- <div class="list card" ng-repeat="item in currentList"  class="animate-repeat"> -->
+    <!-- <div class="list card" ng-repeat="item in currentList"  class="animate-repeat"> 
       
       <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" 
       can-swipe="listCanSwipe">
-        <ion-item ng-repeat="item in currentList" class="item-thumbnail-left">
+        <ion-item collection-repeat="item in currentList" item-width="33%" item-height="20%" class="myitem">
 
-        <img ng-src="{{item.img}}">
-        <h2>{{item.title}}</h2>
+        <img ng-src="http://www.dschool.fr/wp-content/uploads/2015/06/EliottJabes.jpg" class="jaquette">
+        <h2>{{item}}</h2>
         <p>{{item.description}}</p>
         
         <ion-option-button class="button-positive" ng-click="delete(item)">
@@ -40,6 +39,9 @@
 
   </ion-item>
 </ion-list>
+-->
+<img collection-repeat="item in currentList" item-height="25%" item-width="33%"
+         ng-src="{{item.face}}" >
 
   </ion-content>
 </ion-view>

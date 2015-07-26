@@ -12,21 +12,26 @@ angular.module('starter.controllers', [])
     return result;
     }
 
-    $scope.currentList=["titre0", "titre1"];
+    $scope.currentList=[{
+    name : "titre0",
+    artist :"",
+    face :"http://www.dschool.fr/wp-content/uploads/2015/06/EliottJabes.jpg" 
+    },{ 
+    name:  "plus",
+    artist:"",
+    face :"img/plus.png"
+  }];
 
     $scope.addNewSong=function(newSong){
       if( !($scope.inArray(newSong, $scope.currentList) || $scope.currentList.length>11)){
         $scope.currentList.push(newSong);
+        $scope.currentList.newSong.face="http://www.dschool.fr/wp-content/uploads/2015/06/EliottJabes.jpg";
       }
     };
 
-  $scope.account = function(){
-      $state.go('tab.account');
-    };
-
-  $scope.shouldShowDelete = false;
-  $scope.shouldShowReorder = false;
-  $scope.listCanSwipe = true
+$scope.account = function(){
+    $state.go('tab.account');
+  };
 })
 
 .controller('ChatsCtrl', function($scope, Chats, $state) {
@@ -73,12 +78,12 @@ angular.module('starter.controllers', [])
   $scope.remove = function(list) {
     ListLibrary.remove(list);
   };
+  $scope.selectedIndex = -1; 
 
   $scope.itemClicked = function ($index) {
     console.log($index);
     $scope.selectedIndex = $index;
   };
-  
   $scope.playSong = function(song) {
     if ($scope.media.src===song.preview_url && $scope.isPlaying){
       $scope.media.pause();
