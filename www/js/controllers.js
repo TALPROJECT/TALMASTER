@@ -108,10 +108,7 @@ angular.module('starter.controllers', [])
     console.log($index);
     $scope.selectedIndex = $index;
   };
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
   
 
   $scope.refreshBlurring= function(index){

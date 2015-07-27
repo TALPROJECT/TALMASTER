@@ -4,6 +4,10 @@
 
 }
 
+.deletebutton{
+	font-size: 20px;
+	margin-left: 1vw;
+}
 .list-detail-page .pochette{
 	line-height:5px;
 
