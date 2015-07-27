@@ -1,7 +1,9 @@
 <ion-view view-title="My Account" class "myaccount">
-<ion-nav-back-button>
-      </ion-nav-back-button>
-<ion-content>
+    <ion-nav-bar class="bar-stable">
+    <h1 class="title" style="color:black" ng-click="goBack()">Retour</h1>
+    </ion-nav-bar>
+
+<ion-content class="has-header">
 
       <ion type="item-text-wrap">
         <img class ="profilpic" ng-src="{{profils.face}}">
