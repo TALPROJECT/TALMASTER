@@ -93,7 +93,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('ListDetailCtrl', function($scope, $stateParams, ListLibrary, SongLibrary) {
+.controller('ListDetailCtrl', function($scope, $stateParams, ListLibrary, SongLibrary, $ionicHistory) {
   $scope.chansons=SongLibrary.all();
   $stateParams.list = ListLibrary.get($stateParams.listId);
 
@@ -109,7 +109,12 @@ angular.module('starter.controllers', [])
     $scope.selectedIndex = $index;
   };
 
-  
+  $scope.goBack = function(){
+    console.log('ici');
+
+    $scope.media.pause();
+    $ionicHistory.goBack();
+  };
 
   $scope.refreshBlurring= function(index){
     if ($scope.imageClass[index]=='my-class'){

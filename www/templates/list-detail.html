@@ -4,8 +4,14 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="{{list.name}}" class="list-detail-page">
-  <ion-content class="padding">
+<ion-view class="list-detail-page">
+
+  <ion-nav-buttons >
+<!--       <i class="ion-chevron-left" side="left" style="font-size:32px" ng-click="goBack()"> </i>
+ -->      <i class="ion-chevron-left" style="" style="font-size:32px" ng-click="goBack()"> </i>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header padding">
 <!--
   <div class="row" ng-repeat="song in chansons" ng-if="$index % 3 === 0" >
         <div class="col pochette" ng-if="$index < chansons.length" >
