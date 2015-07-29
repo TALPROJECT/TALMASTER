@@ -213,6 +213,8 @@ angular.module('starter.controllers', [])
 
 
 
+
+
 .controller('AccountCtrl', function($scope, Chats, Profil) {
   $scope.settings = {
     enableFriends: true

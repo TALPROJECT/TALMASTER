@@ -32,9 +32,22 @@
     </div> 
   -->
 
-    <img collection-repeat="song in chansons" item-height="25%" item-width="33%"
-         ng-src="{{song.face}}" ng-click="playSong(song); refreshBlurring($index)" 
-         class="base-class" ng-class="imageClass[$index]" >
+    <div collection-repeat="song in chansons" item-height="25%" item-width="33%"
+        back-img="{{song.face}}" ng-click="playSong(song); refreshBlurring($index)" 
+        class="image-collection-list base-class" ng-class="imageClass[$index]" >
+        <p ng-if="imageClass[$index]!=my-class">{{song.name}}
+          {{song.artist}}
+        </p>
+
+    <div ng-if="imageClass[$index]!=my-class"> <i class="ion-android-favorite-outline" style="font-size:32px"> </i> </div>
+
+
+    </div>
       
   </ion-content>
 </ion-view>
+
+<!-- 
+   <div collection-repeat="song in chansons" item-height="25%" item-width="33%"
+         ng-src="{{song.face}}" ng-click="playSong(song); refreshBlurring($index)" 
+         class="base-class" ng-class="imageClass[$index]" > -->
