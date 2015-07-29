@@ -8,7 +8,7 @@
 </ion-nav-buttons>   
   <ion-content>
     <ion-list show-delete="showDelete=='on'">
-      <ion-item ng-repeat="song in favorites" class="item-avatar" >
+      <ion-item ng-repeat="song in myFavorites" class="item-avatar" >
         	<img ng-src="{{ song.face }}" ng-click="playSong(song)">
         	 <b>{{ song.name}}</b> - {{song.artist }}
 
@@ -20,5 +20,7 @@
 
       </ion-item>
     </ion-list>
+        <div ng-click="refreshFavorites()">clic</div>
+
   </ion-content>
 </ion-view>
