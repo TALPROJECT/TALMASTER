@@ -68,33 +68,26 @@ background-position: center center;
   filter: blur(5px); 
  -webkit-filter: blur(5px);
   opacity: 0.45; 
-   position: absolute;
-    top: 0;
-    bottom:0;
-    left: 0;
-    right: 0;    
-    z-index: -1;
+   
 }
-.textnonflou{
-   position:fixed;
-  overflow-y: auto;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  z-index:10000;
-  -webkit-overflow-scrolling: touch;
-}
-.jaquette{
-    display: -webkit-flex;
-    height: 20vw;
-    width: 20vw;
-    margin-left: 3vw;
-}
+
 .list-detail-page .likesong{
   margin-left: 50px;
   margin-top: 70px;
 }
+.image-collection-list{
+background-position: center center;
+height: 100%;
+z-index: 1;
+}
+
+.text-on-blurred-image{
+  position: relative;
+  z-index: 0;
+  margin-top: -30vw;
+  margin-left:10%;
+}
+
 /*DASH PAGE*/
 
 .tab-dash [collection-repeat] {
@@ -253,90 +246,7 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
 .ion-ios-cog-outline{
 	font-size: 35px;
 }
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
 
-.profilname {
-	font-size: 19px;
-	margin-left: 100px;
-}
-.profilpic{
-	width: 100px;
-	float: left;
-	border-radius: 50px;
-	margin: 15px;
-
-}
-.email {
-	font-size: 15px;
-	font-style: italic;
-}
-.logoutbutton{
-	font-size: 30px;
-	margin-left: 20px;
-}
-.newfavsong{
-	width:40vw;
-	text-align: center;
-}
-.favsong{
-
-	padding-left: 2vw;
-	width: 100vw;
-}
-
-
-.image-collection-list{
-background-position: center center;
-height: 100%;
-z-index: 1;
-}
-
-.text-on-blurred-image{
-  position: relative;
-  z-index: 0;
-  margin-top: -30vw;
-  margin-left:10%;
-}
-
-.base-class {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  transition:all 0.5s linear ;
-}
-
-.base-class.my-class {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.1s;
-  transition:all cubic-bezier(0.42, 0.0, 1.0, 1.0) 0.5s;
- filter: blur(5px); 
- -webkit-filter: blur(5px);
-  opacity: 0.45; 
-}
-
-
-.addSongButton{
-	margin-left: 50vw;
-}
-
-.jaquette{
-    display: -webkit-flex;
-    height: 20vw;
-    width: 20vw;
-    margin-left: 3vw;
-}
-
-.myitem{
-	border-radius: 10px;
-	border-width: 1px;
-	border-color: black;
-	border-collapse: inherit;
-}
-
-.grossirboutton{
-	font-size: 35px;
-}
->>>>>>> Stashed changes
-=======
 
 /*NEW FRIEND PAGE*/
 .addbutton{
@@ -365,4 +275,4 @@ z-index: 1;
   vertical-align: text-bottom;
 
 }
->>>>>>> origin/master
+
