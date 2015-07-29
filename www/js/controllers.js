@@ -53,7 +53,17 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('ConnexionCtrl', function($scope) {
+.controller('ConnexionCtrl', function($scope, $state,$timeout) {
+  $scope.openLogin=function(){
+           $timeout(function() {
+      // $timeout to allow animation to complete
+      $state.go('login');
+    }, 750);
+
+  }
+  $scope.openRegister=function(){
+    $state.go('register');
+  }
 })
 .controller('LoginCtrl', function($scope,User, $stateParams, $localStorage,$location) {
   $scope.connect=function(user){

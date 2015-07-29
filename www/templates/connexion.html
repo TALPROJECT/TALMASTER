@@ -6,12 +6,12 @@
     <div class="mytitle">
       <h1> Identifiez-Vous </h1>
     </div>
-    <a href="#/login"><button class="button homepage_connect homepage_button icon-right ion-chevron-right">
+    <button ng-click="openLogin()" class="button homepage_connect homepage_button icon-right ion-chevron-right ">
       Connexion
-  </button></a>
-   <a href="#/register"><button class="button homepage_register homepage_button icon-right ion-chevron-right">
+  </button>
+  <button ng-click="openRegister()" class="button homepage_register homepage_button icon-right ion-chevron-right">
       Inscription
-  </button></a>
+  </button>
   <p class="err_container"> {{err}} </p>
   </div>
   </ion-content>
