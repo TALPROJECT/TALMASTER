@@ -53,7 +53,30 @@ angular.module('starter.controllers', [])
     };
 })
 
+.controller('ConnexionCtrl', function($scope) {
+})
+.controller('LoginCtrl', function($scope,User, $stateParams, $localStorage,$location) {
+  $scope.connect=function(user){
+    console.log(user);
+ 
+    $localStorage.setObject('user',user);               
+                 // $ionicLoading.hide();
+                 console.log("here");
+                  $location.path('/tab/dash');
 
+}
+})
+.controller('RegisterCtrl', function($scope, User, $stateParams, $localStorage,$location) {
+  $scope.regularConnect=function(user){
+    console.log(user);
+ 
+             $localStorage.setObject('user',user);               
+                 // $ionicLoading.hide();
+                 console.log("here");
+                  $location.path('/tab/dash');
+
+}
+})
 .controller('ChatsCtrl', function($scope, Chats, $state) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -67,9 +90,7 @@ angular.module('starter.controllers', [])
   $scope.remove = function(chat) {
     Chats.remove(chat);
   };
-  $scope.account = function(){
-    $state.go('tab.account');
-  };
+  
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats, ListLibrary, SongLibrary) {
@@ -109,16 +130,13 @@ angular.module('starter.controllers', [])
     $scope.selectedIndex = $index;
   };
 
-<<<<<<< HEAD
-  
-=======
   $scope.goBack = function(){
     console.log('ici');
 
     $scope.media.pause();
     $ionicHistory.goBack();
   };
->>>>>>> origin/master
+
 
   $scope.refreshBlurring= function(index){
     if ($scope.imageClass[index]=='my-class'){
@@ -221,14 +239,57 @@ angular.module('starter.controllers', [])
       
     };
 })
-.controller('FavoritesCtrl', function($scope, $state, SongLibrary,$window) {
+.controller('FavoritesCtrl', function($scope, User, Chats, Profil, $state, SongLibrary,$window,$ionicModal) {
   $scope.settings = {
     enableFriends: true
   };
-  $scope.account = function(){
-    $state.go('tab.account');
+  $scope.settings = {
+    enableFriends: true
+  };
+  $scope.profils = Profil.all();
+  $scope.showEdit = false;
+  $scope.editNameClick = function(){
+    $scope.showEdit = true;
+  };
+  $scope.logout=function(){
+    User.destroySession();
+     $scope.modal.hide();
+    $state.go('connexion');
+  }
+  $scope.addNewName=function(myName){
+      
+        $scope.profils.name=myName;
+        $scope.showEdit = false;
+      
+    };
+  $scope.showEditFav = false;
+  $scope.editFavClick = function(){
+    $scope.showEditFav = true;
+  };
+  $scope.addNewFav=function(myFav){
+      
+        $scope.profils.FavoritedSong=myFav;
+        $scope.showEditFav = false;
+      
+    };
+$ionicModal.fromTemplateUrl('templates/tab-account.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal
+  })  
+
+  $scope.openModal = function() {
+    $scope.modal.show();
+  }
+
+  $scope.closeModal = function() {
+    $scope.modal.hide();
   };
 
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
 
 
   $scope.favorites = SongLibrary.all();
