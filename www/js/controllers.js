@@ -109,16 +109,13 @@ angular.module('starter.controllers', [])
     $scope.selectedIndex = $index;
   };
 
-<<<<<<< HEAD
-  
-=======
   $scope.goBack = function(){
     console.log('ici');
 
     $scope.media.pause();
     $ionicHistory.goBack();
   };
->>>>>>> origin/master
+
 
   $scope.refreshBlurring= function(index){
     if ($scope.imageClass[index]=='my-class'){
@@ -192,6 +189,8 @@ angular.module('starter.controllers', [])
 
 
 })
+
+
 
 
 
