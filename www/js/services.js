@@ -1,42 +1,4 @@
-<<<<<<< HEAD
-  angular.module('starter.services', [])
 
-  .factory('Chats', function() {
-    // Might use a resource here that returns a JSON array
-
-    // Some fake testing data
-    var chats = [{
-      id: 0,
-      name: 'Eliott Jabès',
-      lastList: 'Sunset in Da Morning',
-      face: 'http://www.dschool.fr/wp-content/uploads/2015/06/EliottJabes.jpg',
-      email: 'eliototo@gmail.com'
-    }, {
-      id: 1,
-      name: 'Alexandre Attia',
-      lastList: 'Sunshine in Da Evening',
-      face: 'https://media.licdn.com/media/AAEAAQAAAAAAAAKyAAAAJGU4ODY2YWYxLThiMjktNGMxYS1iMWY5LTE1NmJmMTI3ZDIxOQ.jpg',
-      email: 'alexandre.attia@wanadoo.fr'
-    }, {
-      id: 2,
-      name: 'Le Krull',
-      lastList: 'Doucement le matin ...',
-      face: 'http://www.unmondeailleurs.net/wp-content/uploads/antillais_guadeloupe.jpg'
-    }];
-
-    return {
-      all: function() {
-        return chats;
-      },
-      remove: function(chat) {
-        chats.splice(chats.indexOf(chat), 1);
-      },
-      get: function(chatId) {
-        for (var i = 0; i < chats.length; i++) {
-          if (chats[i].id === parseInt(chatId)) {
-            return chats[i];
-          }
-=======
 angular.module('starter.services', [])
 
 
@@ -74,11 +36,10 @@ angular.module('starter.services', [])
       for (var i = 0; i < chats.length; i++) {
         if (chats[i].id === parseInt(chatId)) {
           return chats[i];
->>>>>>> origin/master
         }
         return null;
       }
-    };
+    }};
 
   })
 
