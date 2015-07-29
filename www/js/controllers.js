@@ -1,7 +1,9 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $state) {
+.controller('DashCtrl', function($scope, $state, $localStorage) {
    
+ $localStorage.setObject('userFavoriteArray', []);
+
     $scope.inArray= function(string, array){
       var result = false;
       for(i=0; i<array.length; i++){
@@ -127,6 +129,7 @@ angular.module('starter.controllers', [])
 .controller('ListDetailCtrl', function($scope, $stateParams, ListLibrary, SongLibrary, $ionicHistory, $window, $localStorage) {
   $scope.chansons=SongLibrary.all();
   $stateParams.list = ListLibrary.get($stateParams.listId);
+  $scope.myFavorites=$localStorage.getObject('userFavoriteArray');
 
   $scope.imageClass=['','','','','','','','','','','','','','']; // va servir à l'affichage de l'image blurred
 
@@ -140,9 +143,26 @@ angular.module('starter.controllers', [])
     $scope.selectedIndex = $index;
   };
 
-  $scope.addSongToFavorites = function(song){
-    $localStorage.addElement('userFavoriteArray',song);
+  $scope.containSong = function(arrayOfSongs, song){
+    for (var i = arrayOfSongs.length - 1; i >= 0; i--) {
+      if(arrayOfSongs[i].id == song.id){
+        return true;
+      }
+    }
+    return false;
+  }
 
+  $scope.addSongToFavorites = function(song){
+    $scope.myFavorites = $localStorage.getObject('userFavoriteArray');
+    if (!$scope.containSong($scope.myFavorites, song)){
+      $localStorage.addElement('userFavoriteArray',song);
+      $scope.myFavorites=$localStorage.getObject('userFavoriteArray');
+    }
+  };
+
+  $scope.removeSongFromFavorites = function(song){
+    $localStorage.removeElement('userFavoriteArray', song);
+    $scope.myFavorites=$localStorage.getObject('userFavoriteArray');
   };
 
   $scope.goBack = function(){
@@ -167,50 +187,24 @@ angular.module('starter.controllers', [])
   };
 
 
-  $scope.playSong = function(song) {
-    if ($scope.media.src===song.preview_url && $scope.isPlaying){
-      $scope.media.pause();
-      $scope.isPlaying = false;
-    }
 
-    else{
-      $scope.media.src = song.preview_url;
-      $scope.media.play();
-      $scope.isPlaying = true;
-    }
-
-  };
- 
-  /*$scope.playSong = function(song) {
-    $scope.defer = $q.defer();
-    $scope.media = new Audio(song.preview_url);
-
-    $scope.media.addEventListener("loadeddata", function(){
-       $scope.defer.resolve();
-     });
-
-  $scope.media.play();
-  return $scope.defer.promise;
-}   NE MARCHE PAS, DOIT-ON METTRE $SCOPE POUR TOUTES LES VAR DEFINIES ICI ?*/
 
   $scope.isPlaying=false;
   $scope.media = document.createElement('audio');
-  
-  $scope.playSong = function(song) {
-    if ($scope.media.src===song.preview_url && $scope.isPlaying){
-      $scope.media.pause();
-      $scope.isPlaying = false;
-      return null;
-    }
+    
+    $scope.playSong = function(song) {
+      if ($scope.media.src===song.preview_url && $scope.isPlaying){
+        $scope.media.pause();
+        $scope.isPlaying = false;
+        return null;
+      }
 
-    else{
-      $scope.media.src = song.preview_url;
-      $scope.media.play();
-      $scope.isPlaying = true;
-
-    }
-
-  };
+      else{
+        $scope.media.src = song.preview_url;
+        $scope.media.play();
+        $scope.isPlaying = true;
+      }
+    };
 
 
   $scope.stopSong = function() {
@@ -257,21 +251,13 @@ angular.module('starter.controllers', [])
     };
 })
 .controller('FavoritesCtrl', function($scope, User, Chats, Profil, $state, SongLibrary,$window,$ionicModal, $localStorage) {
-    
-  $localStorage.setObject('userFavoriteArray', [{
-        id: 7,
-        name: 'Voyager',
-        artist: 'Daft Punk',
-        preview_url:'https://p.scdn.co/mp3-preview/90f22d693596f88ec9f07381eabe16de81032b7b',
-        open_url : 'https://open.spotify.com/track/7cMFjxhbXBpOlais7KMF3j',
-        face: 'https://i.scdn.co/image/ed01f028698b4211343f02109196939cfeadd06b'
-      }]);
 
   $scope.myFavorites = $localStorage.getObject('userFavoriteArray');
   
   $scope.refreshFavorites = function(){
-     $scope.myFavorites = $localStorage.getObject('userFavoriteArray');  
+     $scope.myFavorites = $localStorage.getObject('userFavoriteArray'); 
    };
+ 
   
   $scope.settings = {
     enableFriends: true
@@ -324,12 +310,11 @@ $ionicModal.fromTemplateUrl('templates/tab-account.html', {
     $scope.modal.remove();
   });
 
-
-  $scope.favorites = SongLibrary.all();
   
   $scope.removeSong = function(song, index) {
-    $scope.favorites.splice(index, 1);
+    $scope.myFavorites.splice(index, 1);
   };
+
   $scope.openSong=function(song){
     $window.open(song.open_url,"_system");
   };

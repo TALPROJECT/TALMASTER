@@ -32,14 +32,23 @@
     </div> 
   -->
 
-    <div collection-repeat="song in chansons" item-height="25%" item-width="33%"
-        back-img="{{song.face}}" ng-click="playSong(song); refreshBlurring($index); addSongToFavorites(song)" 
-        class="image-collection-list base-class" ng-class="imageClass[$index]" >
-        <p ng-if="imageClass[$index]!=my-class" class="textnonflou">{{song.name}}
-          {{song.artist}}
-        </p>
 
-    <div ng-if="imageClass[$index]!=my-class"> <i class="likesong ion-android-favorite-outline" style="font-size:32px"> </i> </div>
+    <div collection-repeat="song in chansons" item-height="25%" item-width="33%">
+
+        <div back-img="{{song.face}}" ng-click="playSong(song); refreshBlurring($index)" 
+        class="image-collection-list base-class" ng-class="imageClass[$index]"> </div>
+
+    <div ng-if="imageClass[$index]!=my-class" class="text-on-blurred-image"> 
+      
+      <i class="ion-android-favorite-outline" style="font-size:32px" ng-if="!containSong(myFavorites, song);" ng-click="addSongToFavorites(song)"> </i> 
+      <i class="ion-android-favorite" style="font-size:32px" ng-if="containSong(myFavorites, song);" ng-click="removeSongFromFavorites(song)"> </i> 
+    
+      <p>{{song.name}}
+        {{song.artist}}
+      </p>
+    </div>
+
+
 
 
     </div>

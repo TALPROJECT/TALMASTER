@@ -258,6 +258,8 @@
     })
     //Creating local Storage Function
     .factory('$localStorage', ['$window', function($window) {
+
+
       return {
         set: function(key, value) {
           $window.localStorage[key] = value;
