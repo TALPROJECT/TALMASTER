@@ -68,6 +68,24 @@
           }
         }
       })
+    .state('tab.newfriend', {
+        url: '/newfriend',
+        views: {
+          'tab-chats': {
+            templateUrl: 'templates/newfriend.html',
+            controller: 'NewFriendCtrl'
+          }
+        }
+      })
+     .state('tab.allfriend', {
+        url: '/allfriend',
+        views: {
+          'tab-chats': {
+            templateUrl: 'templates/allfriend.html',
+            controller: 'AllFriendCtrl'
+          }
+        }
+      })
       .state('tab.chat-detail', {
         url: '/chats/:chatId',
         views: {

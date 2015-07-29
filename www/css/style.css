@@ -1,7 +1,7 @@
 
 /*Modification pour avoir un ensemble uni assez sobre*/
 .item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content {
-  background-color: #637aa8;
+  background-color: #e8ecf3;
   color: black;
   border-color: black;
   font-family: 'Ubuntu', sans-serif;
@@ -12,26 +12,26 @@ a{
   text-decoration: none;
 }
 .tabs-striped .tabs {
-    background-color: #637aa8;
+    background-color: #e8ecf3;
     }
 .tabs-striped.tabs-color-dark .tab-item.tab-item-active, .tabs-striped.tabs-color-dark .tab-item.active, .tabs-striped.tabs-color-dark .tab-item.activated {
     margin-top: -2px;
-    color: #444;
+    color: #e8ecf3;
     border: 0 solid #000;
     border-top-width: 2px;
 }
 .padding {
      padding: 0px; 
-    background-color: #637aa8;
+    background-color: #e8ecf3;
   }
 .tab-item .icon {
     color: black;
   }
 .mabar{
-  background-color: #637aa8;
+  background-color: #e8ecf3;
 }
 .favpage .scroll-content, .chat-page .scroll-content {
-    background-color: #637aa8;
+    background-color: #e8ecf3;
   }
 .title{
  border-color: black;
@@ -44,7 +44,7 @@ a{
   font-family: 'Ubuntu', sans-serif;
 }
 .chat-page .scroll-content {
-    background-color: #637aa8;
+    background-color: #e8ecf3;
   }
 /*CHAT DETAIL PAGE*/
 
@@ -126,19 +126,17 @@ background-position: center center;
 	margin-left: 1vw;
 }
 .favpage .ion-content{
-  background-color: #637aa8;
+  background-color: #e8ecf3;
 }
 .favpage .itemfav{
-  background-color: #637aa8;
+  background-color: #e8ecf3;
 }
 .grossirboutton{
   font-size: 35px;
 }
 
 /*ACCOUNT PAGE*/
-.accountpage{
-  background-color: #637aa8;
-}
+
 .profilname {
   font-size: 19px;
   margin-left: 100px;
@@ -227,7 +225,7 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
 .login-view textarea, input[type="text"], input[type="password"]{
 	text-align: center;
 	padding-bottom: 15px;
-	color: #f58d59; /*couleur lorsqu'on ecrit pour se logger*/
+	color: black;
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 .loginbutton{
@@ -255,6 +253,7 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
 .ion-ios-cog-outline{
 	font-size: 35px;
 }
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 
@@ -337,3 +336,33 @@ z-index: 1;
 	font-size: 35px;
 }
 >>>>>>> Stashed changes
+=======
+
+/*NEW FRIEND PAGE*/
+.addbutton{
+  font-size: 30px;
+}
+.newfriendpage .searchicon{
+  font-size: 70px;
+  color: #637aa8;
+  margin-left: 45vw;
+}
+.newfriendpage .placeholder-icon{
+  font-size: 20px;
+}
+.newfriendpage .coms{
+  margin-top: 4vw;
+  text-align: center;
+  color: #637aa8;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.newfriendpage .addarrow{
+  text-align: left;
+  margin-top: 5vw;
+  color: #637aa8;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 20px;
+  vertical-align: text-bottom;
+
+}
+>>>>>>> origin/master

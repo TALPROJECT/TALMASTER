@@ -1,5 +1,10 @@
 <ion-view view-title="Audio Feed" class="chat-page">
-  
+ <ion-nav-buttons side="left">
+    <i class ="addbutton ion-person-add" ng-click="openModal()"></i>
+</ion-nav-buttons>  
+<ion-nav-buttons side="right">
+    <i class ="addbutton ion-ios-people" ng-click="openModal1()"></i>
+</ion-nav-buttons>  
   <ion-content>
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
