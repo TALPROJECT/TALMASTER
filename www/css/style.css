@@ -12,7 +12,24 @@
 	line-height:5px;
 }
 
-
+.signin-page .ng-click{
+	-webkit-animation: fadeOutRight 0.5s;
+	-moz-animation: fadeOutRight 0.5s;
+	-o-animation: fadeOutRight 0.5s;
+	animation: fadeOutRight 0.5s;
+}
+.ng-leave{
+	-webkit-animation: fadeOut 0.5s;
+	-moz-animation: fadeOut 0.5s;
+	-o-animation: fadeOut 0.5s;
+	animation: fadeOut 0.5s;
+}
+.mabar{
+	background-color: #637aa8;
+}
+.accountpage{
+	background-color: #637aa8;
+}
 .homepage_logo{
 	width: 30vw;
 	margin-left: 40vw;
@@ -89,6 +106,13 @@ a{
 font-family: 'Yanone Kaffeesatz', sans-serif;
  text-align: center;
 }
+.favpage .ion-content{
+	background-color: #637aa8;
+}
+.favpage .itemfav{
+	background-color: #637aa8;
+}
+
 .signin-page{
 	background-color: #637aa8;
 }
