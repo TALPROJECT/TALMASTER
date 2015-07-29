@@ -8,11 +8,8 @@
 </ion-nav-buttons>   
   <ion-content>
     <ion-list show-delete="showDelete=='on'">
-<<<<<<< HEAD
-      <ion-item ng-repeat="song in myFavorites" class="item-avatar" >
-=======
-      <ion-item ng-repeat="song in favorites" class="item-avatar itemfav" >
->>>>>>> origin/master
+
+      <ion-item ng-repeat="song in myFavorites" class="item-avatar itemfav" >
         	<img ng-src="{{ song.face }}" ng-click="playSong(song)">
         	 <b >{{ song.name}}</b> - {{song.artist }}
 
