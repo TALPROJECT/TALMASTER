@@ -30,7 +30,6 @@ angular.module('starter.controllers', [])
     name:  "plus",
     artist:"",
     face :"img/plus.png",
-  
     }];
 
     $scope.swapIndexes = function (array, index1, index2){
@@ -87,7 +86,7 @@ angular.module('starter.controllers', [])
 
 }
 })
-.controller('ChatsCtrl', function($scope, Chats, $state) {
+.controller('ChatsCtrl', function($scope, Chats, $state, $ionicModal) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -95,14 +94,90 @@ angular.module('starter.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+ $scope.selectedCounter = 0;
 
+
+  $scope.change = function (item) {
+        if (item.selected) {
+            $scope.selectedCounter++
+        } else {
+            $scope.selectedCounter--
+        }
+    };
+
+  $scope.counterPositive=function(){
+    if($scope.selectedCounter == 0){
+      return false;
+    }
+    else{
+      return true;
+    }
+  };
+   $scope.counterMoreOne=function(){
+    if($scope.selectedCounter == 1){
+      return true;
+    }
+    else{
+      return false;
+    }
+  };
+ $scope.orderProp = 'name'
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);
   };
+
+for (var i = $scope.chats.length - 1; i >= 0; i--) {
+  $scope.chats[i].friendClicked=false;
+};
+
+  $scope.clickFriend=function($index){
+    if ($scope.chats[$index].friendClicked){
+      $scope.chats[$index].friendClicked=false;
+    }
+
+    else{
+     $scope.chats[$index].friendClicked=true;
+    }
+  }
+
+  $ionicModal.fromTemplateUrl('templates/newfriend.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal
+  })  
+
+  $scope.openModal = function() {
+    $scope.modal.show();
+  }
+
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+$ionicModal.fromTemplateUrl('templates/allfriend.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal1 = modal
+  })  
+
+  $scope.openModal1 = function() {
+    $scope.modal1.show();
+  }
+
+  $scope.closeModal1 = function() {
+    $scope.modal1.hide();
+  };
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
   
 })
-
+.controller('NewFriendCtrl', function($scope, Chats, $state) {
+  })
+.controller('NewFriendCtrl', function($scope, Chats, $state) {
+  })
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats, ListLibrary, SongLibrary) {
  
   $scope.chat = Chats.get($stateParams.chatId);
@@ -347,7 +422,7 @@ $ionicModal.fromTemplateUrl('templates/tab-account.html', {
       $scope.media.play();
       $scope.isPlaying = true;
 
-    }
+        }
 
   };
 });
