@@ -35,11 +35,11 @@
     <div collection-repeat="song in chansons" item-height="25%" item-width="33%"
         back-img="{{song.face}}" ng-click="playSong(song); refreshBlurring($index); addSongToFavorites(song)" 
         class="image-collection-list base-class" ng-class="imageClass[$index]" >
-        <p ng-if="imageClass[$index]!=my-class">{{song.name}}
+        <p ng-if="imageClass[$index]!=my-class" class="textnonflou">{{song.name}}
           {{song.artist}}
         </p>
 
-    <div ng-if="imageClass[$index]!=my-class"> <i class="ion-android-favorite-outline" style="font-size:32px"> </i> </div>
+    <div ng-if="imageClass[$index]!=my-class"> <i class="likesong ion-android-favorite-outline" style="font-size:32px"> </i> </div>
 
 
     </div>
