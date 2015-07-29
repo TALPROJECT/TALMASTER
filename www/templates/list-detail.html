@@ -33,7 +33,7 @@
   -->
 
     <div collection-repeat="song in chansons" item-height="25%" item-width="33%"
-        back-img="{{song.face}}" ng-click="playSong(song); refreshBlurring($index)" 
+        back-img="{{song.face}}" ng-click="playSong(song); refreshBlurring($index); addSongToFavorites(song)" 
         class="image-collection-list base-class" ng-class="imageClass[$index]" >
         <p ng-if="imageClass[$index]!=my-class">{{song.name}}
           {{song.artist}}

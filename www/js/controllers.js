@@ -124,7 +124,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('ListDetailCtrl', function($scope, $stateParams, ListLibrary, SongLibrary, $ionicHistory) {
+.controller('ListDetailCtrl', function($scope, $stateParams, ListLibrary, SongLibrary, $ionicHistory, $window, $localStorage) {
   $scope.chansons=SongLibrary.all();
   $stateParams.list = ListLibrary.get($stateParams.listId);
 
@@ -138,6 +138,11 @@ angular.module('starter.controllers', [])
   $scope.itemClicked = function ($index) {
     console.log($index);
     $scope.selectedIndex = $index;
+  };
+
+  $scope.addSongToFavorites = function(song){
+    $localStorage.addElement('userFavoriteArray',song);
+
   };
 
   $scope.goBack = function(){
@@ -251,7 +256,23 @@ angular.module('starter.controllers', [])
       
     };
 })
-.controller('FavoritesCtrl', function($scope, User, Chats, Profil, $state, SongLibrary,$window,$ionicModal) {
+.controller('FavoritesCtrl', function($scope, User, Chats, Profil, $state, SongLibrary,$window,$ionicModal, $localStorage) {
+    
+  $localStorage.setObject('userFavoriteArray', [{
+        id: 7,
+        name: 'Voyager',
+        artist: 'Daft Punk',
+        preview_url:'https://p.scdn.co/mp3-preview/90f22d693596f88ec9f07381eabe16de81032b7b',
+        open_url : 'https://open.spotify.com/track/7cMFjxhbXBpOlais7KMF3j',
+        face: 'https://i.scdn.co/image/ed01f028698b4211343f02109196939cfeadd06b'
+      }]);
+
+  $scope.myFavorites = $localStorage.getObject('userFavoriteArray');
+  
+  $scope.refreshFavorites = function(){
+     $scope.myFavorites = $localStorage.getObject('userFavoriteArray');  
+   };
+  
   $scope.settings = {
     enableFriends: true
   };
