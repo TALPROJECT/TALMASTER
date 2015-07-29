@@ -81,7 +81,7 @@ angular.module('starter.services', [])
     }, {
       id: 2,
       name: 'Act Like You Know',
-      artist: 'Fat Larry band',
+      artist: 'Fat Larry\'s band',
       preview_url : 'https://p.scdn.co/mp3-preview/1507d2c0c115fd853efd548df33e3ca8e892c14d',
       open_url : 'https://open.spotify.com/album/7EJ7WCaYLgelKpBONqOCaN',
       face: 'https://i.scdn.co/image/476d9145e734048ef6075162d7f49da32ce68c2f'
@@ -101,14 +101,14 @@ angular.module('starter.services', [])
       face: 'https://i.scdn.co/image/7241f947ea45d1cd2c9716adc94f85668e511dcf'
     }, {
       id: 5,
-      name: 'You Can t Always Get What You Want',
+      name: 'You Can\'t Always Get What You Want',
       artist: 'The Rolling Stones',
       preview_url : 'https://p.scdn.co/mp3-preview/75e92f88be509135ea97ba4cc7161f202d15f87a',
       open_url : 'https://open.spotify.com/track/72WZtWs6V7uu3aMgMmEkYe',
       face: 'https://i.scdn.co/image/91205a1c80960d7055f8ed1bbe022f195e1767a4'
     }, {
       id: 6,
-      name: 'Candy s Room',
+      name: 'Candy\'s Room',
       artist: 'Bruce Springsteen',
       preview_url:'https://p.scdn.co/mp3-preview/f34abf05a7cba0b94c72e84178d9b3a6a72bcbe1',
       open_url : 'https://open.spotify.com/track/3p7W5VvPBZmuvkagBE2RbR',
