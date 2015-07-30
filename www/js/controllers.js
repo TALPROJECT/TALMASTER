@@ -220,7 +220,7 @@
     })
   .controller('NewFriendCtrl', function($scope, Chats, $state) {
     })
-  .controller('ChatDetailCtrl', function($scope, $stateParams, Chats, ListLibrary, SongLibrary) {
+  .controller('ChatDetailCtrl', function($scope, $stateParams, Chats, ListLibrary, SongLibrary,$ionicHistory) {
    
     $scope.chat = Chats.get($stateParams.chatId);
     $scope.lists = ListLibrary.all();
@@ -238,6 +238,10 @@
       }
       return res;
     }; */
+    $scope.goBack = function(){
+      console.log('ici');
+      $ionicHistory.goBack();
+    };
 
   })
 
