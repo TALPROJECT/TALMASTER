@@ -148,6 +148,18 @@ z-index: 1;
   border-color: black;
   border-collapse: inherit;
 }
+.tab-dash .nametoartist{
+    margin: 0 0 10px;
+    line-height: 9px;
+    vertical-align: text-bottom;
+    font-family: 'Lobster', cursive;
+    font-weight: 100;
+    text-align: center;
+  }
+.tab-dash .name{
+  text-align: center;
+}
+
 /*FAV PAGE*/
 .settingsicon{
 	font-size: 30px;

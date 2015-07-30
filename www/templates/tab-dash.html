@@ -18,11 +18,12 @@
         class="image-collection-list base-class" ng-class="imageClass[$index]"> </div>
 	
        	<div ng-if="imageClass[$index]!=my-class" class="text-on-blurred-image" ng-click="playSong(song); refreshBlurring($index)"> 
-			<p>
-        		{{song.name}}
-        		<br>
-        		{{song.artist}}
-     			</p>
+
+          <p class="nametoartist"><br><h4 class="name">
+      {{song.name}}</h4>
+       <p class="nametoartist"> {{song.artist}}</p>
+
+      </p>
      	</div>
 	</div>
   
