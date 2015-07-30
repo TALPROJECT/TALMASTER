@@ -1,10 +1,12 @@
   angular.module('starter.controllers', [])
 
-  .controller('DashCtrl', function($scope, $state, $localStorage, SongLibrary) {
+  .controller('DashCtrl', function($scope, $state, Chats, $localStorage, SongLibrary, $ionicModal) {
      
    $localStorage.setObject('userFavoriteArray', []);
    $scope.chansons = SongLibrary.all();
    $scope.chanson=null;
+
+   $scope.chats=Chats.all();
     
    // ****** Fonctions recyclées depuis le list-detail ****
 
@@ -90,9 +92,52 @@
         }
       }
 
+      $scope.validateCurrentList = function(){
+
+      }
+
       $scope.account = function(){
        $state.go('tab.account');
       };
+
+// ******************** Modal Control ************************
+  $ionicModal.fromTemplateUrl('templates/sending-to-friends.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal
+    })  
+
+    $scope.openModal = function() {
+      $scope.modal.show();
+    }
+
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    };
+
+    $scope.$on('$destroy', function() {
+      $scope.modal.remove();
+    });
+
+    for (var i = $scope.chats.length - 1; i >= 0; i--) {
+    $scope.chats[i].friendClicked=false;
+  };
+
+    $scope.clickFriend=function($index){
+      if ($scope.chats[$index].friendClicked){
+        $scope.chats[$index].friendClicked=false;
+      }
+
+      else{
+       $scope.chats[$index].friendClicked=true;
+      }
+    }
+
+  })
+
+  .controller('SendingToFriendsCtrl', function(){
+
   })
 
   .controller('ConnexionCtrl', function($scope, $state,$timeout) {
@@ -247,8 +292,11 @@
   })
 
   .controller('ListDetailCtrl', function($scope, $stateParams, ListLibrary, SongLibrary, $ionicHistory, $window, $localStorage, $rootScope) {
+    
+    $scope.list = ListLibrary.get($stateParams.listId);
+
+
     $scope.chansons=SongLibrary.all();
-    $stateParams.list = ListLibrary.get($stateParams.listId);
     
     $rootScope.myFavorites=$localStorage.getObject('userFavoriteArray');
 

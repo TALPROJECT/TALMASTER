@@ -200,8 +200,11 @@ display : inline-block;
 }
 .item-input-dash input[type="text"]{
   width : 100%;
-
-
+}
+.send-button-dash{
+  position : absolute;
+  font-size: 15vw;
+  margin-left: 2vw;
 }
 
 

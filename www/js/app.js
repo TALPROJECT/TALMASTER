@@ -60,6 +60,16 @@
       }
     })
 
+     .state('sendingToFriends', {
+      url: '/sendingToFriends',
+      views: {
+        'tab-dash': {
+          templateUrl: 'templates/sending-to-friends.html',
+          controller: 'SendingToFriendsCtrl'
+        }
+      }
+    })
+
     .state('tab.chats', {
         url: '/chats',
         views: {
