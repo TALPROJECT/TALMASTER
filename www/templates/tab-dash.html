@@ -1,15 +1,20 @@
 <ion-view view-title="Share a List" class="tab-dash"> 
 
   <ion-content class="padding">
-    <div class=" card">
+    <div class="search-bar">
        <label class="item item-input"> 
             <input type="text" placeholder="Your research" ng-model="myId">
-          
+          </input>
           </label>
       </div>
-	
-	<div class = "addSongButton ion-android-add-circle" ng-click="addNewSong(myId)"> 
+	<div class = "add-song-button ion-android-add-circle" ng-click="addNewSong(myId)"> 
     </div>
+
+	<div ng-show="currentList.length==0">
+		<i class="icon ion-music-note music-icon"></i>
+	 	<p class="coms">Create a <a class="lobster-font">playlist</a>
+		<p class="coms">of less than eleven <a class="lobster-font">songs</a>
+	</div>
 
 
 	<div collection-repeat="song in currentList" item-height="25%" item-width="33%">
