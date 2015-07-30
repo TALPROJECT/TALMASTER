@@ -7,41 +7,11 @@
           
           </label></div>
       </div>
-<div class = "addSongButton ion-android-add-circle" ng-click="addNewSong(myTitle)"> </div>
+<div class = "addSongButton ion-android-add-circle"  ng-click="addNewSong(myTitle)" > </div>
     </div>
 
-    
-
-    <!-- <div class="list card" ng-repeat="item in currentList"  class="animate-repeat"> 
-      
-      <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" 
-      can-swipe="listCanSwipe">
-        <ion-item collection-repeat="item in currentList" item-width="33%" item-height="20%" class="myitem">
-
-        <img ng-src="http://www.dschool.fr/wp-content/uploads/2015/06/EliottJabes.jpg" class="jaquette">
-        <h2>{{item}}</h2>
-        <p>{{item.description}}</p>
-        
-        <ion-option-button class="button-positive" ng-click="delete(item)">
-         Delete
-        </ion-option-button>
-
-         <ion-option-button class="button-info"
-                       ng-click="edit(item)">
-      Edit
-    </ion-option-button>
-    <ion-delete-button class="ion-minus-circled"
-                       ng-click="items.splice($index, 1)">
-    </ion-delete-button>
-    <ion-reorder-button class="ion-navicon"
-                        on-reorder="reorderItem(item, $fromIndex, $toIndex)">
-    </ion-reorder-button>
-
-  </ion-item>
-</ion-list>
--->
-<img collection-repeat="item in currentList" item-height="25%" item-width="33%"
-         ng-src="{{item.face}}" >
+<img collection-repeat="song in currentList" item-height="25%" item-width="33%"
+         ng-src="{{song.face}}">
 
   </ion-content>
 </ion-view>

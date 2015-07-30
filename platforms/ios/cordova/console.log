@@ -25,3 +25,10 @@ Jul 26 18:09:02 MBPdeAlexandre.home rtcreporting[14496] <Debug>: setMessageLoggi
 Jul 26 18:09:06 MBPdeAlexandre.home rtcreporting[14496] <Debug>: setMessageLoggingBlock: called
 Jul 26 18:09:10 MBPdeAlexandre.home rtcreporting[14496] <Debug>: setMessageLoggingBlock: called
 Jul 26 18:09:17 MBPdeAlexandre.home rtcreporting[14496] <Debug>: setMessageLoggingBlock: called
+2015-07-30 02:37:51.132 talproject[8250:679812] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-30 02:37:51.136 talproject[8250:679812] Multi-tasking -> Device: YES, App: YES
+2015-07-30 02:37:51.147 talproject[8250:679812] Unlimited access to network resources
+2015-07-30 02:37:51.368 talproject[8250:679812] [CDVTimer][keyboard] 0.052035ms
+2015-07-30 02:37:51.368 talproject[8250:679812] [CDVTimer][TotalPluginStartup] 0.209033ms
+2015-07-30 02:37:51.523 talproject[8250:679812] Resetting plugins due to page load.
+2015-07-30 02:37:51.834 talproject[8250:679812] Finished load of: file:///Users/alexandreattia/Library/Developer/CoreSimulator/Devices/7D3271DB-085D-4993-8018-A5A10D176FF8/data/Containers/Bundle/Application/C8082343-5E3B-40FC-A63E-27732604B765/talproject.app/www/index.html#/tab/dash
