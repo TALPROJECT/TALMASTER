@@ -4,9 +4,9 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="{{chat.name}}">
+<ion-view view-title="{{chat.name}}" class="chat-detail-page">
 <ion-nav-buttons >
-    <i class="ion-chevron-left" style="" style="font-size:32px" ng-click="goBack()"> </i>
+    <i class="ion-chevron-left back-icon" style="" ng-click="goBack()"> </i>
 </ion-nav-buttons>
   <ion-content class="padding">
     <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="list in lists" type="item-text-wrap" href="#/tab/lists/{{list.id}}">

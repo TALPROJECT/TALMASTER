@@ -47,7 +47,9 @@ a{
     background-color: #e8ecf3;
   }
 /*CHAT DETAIL PAGE*/
-
+.ion-chevron-left{
+  font-size: 30px;
+}
 /*LIST DETAIL PAGE */
 .list-detail-page .nomchanson{
   font-size: 3vw;
@@ -353,7 +355,7 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 .newfriendpage .addarrow{
-  text-align: left;
+  text-align: center;
   margin-top: 5vw;
   color: #637aa8;
   font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -379,4 +381,8 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
 .newfriendpage .animation.ng-leave.ng-leave-active {
   opacity: 0;
 }
-
+.newfriendpage .friend-name{
+ position: absolute;
+ margin-top: 25px;
+  margin-left: 5px;
+}

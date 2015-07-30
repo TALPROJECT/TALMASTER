@@ -340,11 +340,7 @@
 
   })
 
-
-
-
-
-  .controller('AccountCtrl', function($scope, Chats, Profil) {
+  .controller('AccountCtrl', function($scope, Chats, Profil,$state) {
     $scope.settings = {
       enableFriends: true
     };
@@ -369,6 +365,9 @@
           $scope.showEditFav = false;
         
       };
+    $scope.goPolicy=function(){
+    $state.go('policy');
+  }
   })
   .controller('FavoritesCtrl', function($scope, User, Chats, Profil, $state, SongLibrary,$window,$ionicModal, $localStorage, $rootScope) {
 
@@ -435,8 +434,6 @@
       $scope.modal.remove();
     });
 
-
-    
     $scope.removeSong = function(index) {
       $rootScope.myFavorites.splice(index, 1);
     };
@@ -460,11 +457,20 @@
 
           }
   };
+  $scope.goPolicy=function(){
+    $state.go('policy');
+  }
 })
 .controller('TabCtrl', function($scope, $localStorage){
   $scope.enteringFavorites=function(){
   $scope.myFavorites = $localStorage.getObject('userFavoriteArray');
   }
+})
+.controller('PolicyCtrl', function($scope,$ionicHistory){
+  $scope.goBack = function(){
+      console.log('ici');
+      $ionicHistory.goBack();
+    };
 });
 
 

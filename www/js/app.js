@@ -121,6 +121,12 @@
       controller: 'ConnexionCtrl'
     })
 
+  .state('policy', {
+      url: '/policy',
+      templateUrl: 'templates/policy-page.html',
+      controller: 'PolicyCtrl'
+    })
+
   .state('login', {
       url: '/login',
       templateUrl: 'templates/login.html',
