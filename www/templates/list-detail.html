@@ -43,9 +43,15 @@
       <i  class="ion-android-favorite-outline hearticon" style="font-size:32px" ng-if="!containSong(myFavorites, song);" ng-click="addSongToFavorites(song)"> </i> 
       
     
+<<<<<<< HEAD
       <p ng-click="playSong(song); refreshBlurring($index)" class="nametoartist"><h4>
       {{song.name}}</h4>
        <p class="nametoartist"> {{song.artist}}</p>
+=======
+      <p ng-click="playSong(song); refreshBlurring($index)">
+        {{song.name}}
+        {{song.artist}}
+>>>>>>> origin/master
       </p>
     </div>
 
