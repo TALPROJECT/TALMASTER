@@ -429,20 +429,7 @@
       $scope.modal.remove();
     });
 
-<<<<<<< HEAD
 
-  $scope.openSong=function(song){
-    $window.open(song.open_url,"_system",'location=yes');
-  };
-  $scope.isPlaying=false;
-  $scope.media = document.createElement('audio');
-  $scope.playSong = function(song) {
-    if ($scope.media.src===song.preview_url && $scope.isPlaying){
-      $scope.media.pause();
-      $scope.isPlaying = false;
-      return null;
-    }
-=======
     
     $scope.removeSong = function(song, index) {
       $rootScope.myFavorites.splice(index, 1);
@@ -459,7 +446,6 @@
         $scope.isPlaying = false;
         return null;
       }
->>>>>>> origin/master
 
       else{
         $scope.media.src = song.preview_url;
@@ -467,8 +453,6 @@
         $scope.isPlaying = true;
 
           }
-
-<<<<<<< HEAD
   };
 })
 .controller('TabCtrl', function($scope, $localStorage){
@@ -476,7 +460,5 @@
   $scope.myFavorites = $localStorage.getObject('userFavoriteArray');
   }
 });
-=======
-    };
-  });
->>>>>>> origin/master
+
+
