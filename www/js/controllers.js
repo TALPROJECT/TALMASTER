@@ -431,7 +431,7 @@
 
 
     
-    $scope.removeSong = function(song, index) {
+    $scope.removeSong = function(index) {
       $rootScope.myFavorites.splice(index, 1);
     };
 
