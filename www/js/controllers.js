@@ -4,6 +4,7 @@
      
    $localStorage.setObject('userFavoriteArray', []);
    $scope.chansons = SongLibrary.all();
+   $scope.chanson=null;
     
    // ****** Fonctions recyclées depuis le list-detail ****
 
@@ -434,9 +435,14 @@
 
 
     
-    $scope.removeSong = function(song) {
-      $localStorage.removeElement('userFavoriteArray',song);
-      $rootScope.myFavorites=$localStorage.getObject('userFavoriteArray');
+    $scope.removeSong = function(index) {
+      console.log(index);
+      console.log('ici');
+      console.log($rootScope.myFavorites);
+      $rootScope.myFavorites.splice(index, 1);
+      $rootScope.myFavorites = $localStorage.getObject('userFavoriteArray');
+      // $localStorage.removeElement('userFavoriteArray',song);
+      // $rootScope.myFavorites=$localStorage.getObject('userFavoriteArray');
 
 
     };
