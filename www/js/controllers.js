@@ -4,7 +4,47 @@
      
    $localStorage.setObject('userFavoriteArray', []);
    $scope.chansons = SongLibrary.all();
+    
+   // ****** Fonctions recyclées depuis le list-detail ****
 
+    $scope.imageClass=['','','','','','','','','','','','','',''];
+    $scope.refreshBlurring= function(index){
+      if ($scope.imageClass[index]=='my-class'){
+        $scope.imageClass=['','','','','','','','','','','','','',''];
+
+      }
+
+      else {
+      $scope.imageClass=['','','','','','','','','','','','','',''];
+      $scope.imageClass[index]='my-class';
+      }
+
+    };
+
+    $scope.isPlaying=false;
+    $scope.media = document.createElement('audio');
+      
+      $scope.playSong = function(song) {
+        if ($scope.media.src===song.preview_url && $scope.isPlaying){
+          $scope.media.pause();
+          $scope.isPlaying = false;
+          return null;
+        }
+
+        else{
+          $scope.media.src = song.preview_url;
+          $scope.media.play();
+          $scope.isPlaying = true;
+        }
+      };
+
+
+    $scope.stopSong = function() {
+      $scope.media.pause();
+      $scope.isPlaying = false;
+    };
+
+   // ****** Fonctions auxiliaires ****
 
       $scope.inArray= function(string, array){
         var result = false;
@@ -16,25 +56,17 @@
       return result;
       }
 
-      $scope.inList = function(string, list){
+      $scope.inList = function(id, list){
         var result = false;
         for(i=0; i<list.length; i++){
-          if(list[i].name == string){
+          if(list[i].id == id){
               result = true;
           }
         }
       return result;
       }
 
-      $scope.currentList=[{
-      name : "titre0",
-      artist :"",
-      face :"http://www.dschool.fr/wp-content/uploads/2015/06/EliottJabes.jpg" 
-      },{ 
-      name:  "plus",
-      artist:"",
-      face :"img/plus.png",
-      }];
+      $scope.currentList=[];
 
       $scope.swapIndexes = function (array, index1, index2){
         var tempArray = array;
@@ -42,12 +74,18 @@
         array[index2]=tempArray[index1];
       }
 
-      $scope.addNewSong=function(newSong){
-        if( !($scope.inList(newSong.title, $scope.currentList) || $scope.currentList.length>11)){
-          $scope.currentList.splice($scope.currentList.length-1, 0,{
-            name : newSong.name,
-            artist : newSong.title,
-            face: newSong.face });
+      // ****** Fonctions d'ajout d'une chanson à la liste courante ****
+
+      $scope.addNewSong=function(id){
+        if( !($scope.inList(id, $scope.currentList) || $scope.currentList.length>10)){
+          
+          songToAdd= $scope.chansons[id];
+          $scope.currentList.splice($scope.currentList.length, 0,{
+            id : id,
+            name : songToAdd.name,
+            artist : songToAdd.artist,
+            preview_url : songToAdd.preview_url,
+            face: songToAdd.face});
         }
       }
 
@@ -203,10 +241,11 @@
 
   })
 
-  .controller('ListDetailCtrl', function($scope, $stateParams, ListLibrary, SongLibrary, $ionicHistory, $window, $localStorage) {
+  .controller('ListDetailCtrl', function($scope, $stateParams, ListLibrary, SongLibrary, $ionicHistory, $window, $localStorage, $rootScope) {
     $scope.chansons=SongLibrary.all();
     $stateParams.list = ListLibrary.get($stateParams.listId);
-    $scope.myFavorites=$localStorage.getObject('userFavoriteArray');
+    
+    $rootScope.myFavorites=$localStorage.getObject('userFavoriteArray');
 
     $scope.imageClass=['','','','','','','','','','','','','','']; // va servir à l'affichage de l'image blurred
 
@@ -230,16 +269,16 @@
     }
 
     $scope.addSongToFavorites = function(song){
-      $scope.myFavorites = $localStorage.getObject('userFavoriteArray');
-      if (!$scope.containSong($scope.myFavorites, song)){
+      $rootScope.myFavorites = $localStorage.getObject('userFavoriteArray');
+      if (!$scope.containSong($rootScope.myFavorites, song)){
         $localStorage.addElement('userFavoriteArray',song);
-        $scope.myFavorites=$localStorage.getObject('userFavoriteArray');
+        $rootScope.myFavorites=$localStorage.getObject('userFavoriteArray');
       }
     };
 
     $scope.removeSongFromFavorites = function(song){
       $localStorage.removeElement('userFavoriteArray', song);
-      $scope.myFavorites=$localStorage.getObject('userFavoriteArray');
+      $rootScope.myFavorites=$localStorage.getObject('userFavoriteArray');
     };
 
     $scope.goBack = function(){
@@ -327,13 +366,16 @@
         
       };
   })
-  .controller('FavoritesCtrl', function($scope, User, Chats, Profil, $state, SongLibrary,$window,$ionicModal, $localStorage) {
+  .controller('FavoritesCtrl', function($scope, User, Chats, Profil, $state, SongLibrary,$window,$ionicModal, $localStorage, $rootScope) {
 
-    $scope.myFavorites = $localStorage.getObject('userFavoriteArray');
+    $rootScope.myFavorites = $localStorage.getObject('userFavoriteArray');
     
-    $scope.refreshFavorites = function(){
-       $scope.myFavorites = $localStorage.getObject('userFavoriteArray'); 
-     };
+    $scope.shouldShowDelete = false;
+
+    
+    // $scope.refreshFavorites = function(){
+    //   $rootScope.myFavorites = $localStorage.getObject('userFavoriteArray'); 
+    //  };
    
     
     $scope.settings = {
@@ -389,7 +431,7 @@
 
     
     $scope.removeSong = function(song, index) {
-      $scope.myFavorites.splice(index, 1);
+      $rootScope.myFavorites.splice(index, 1);
     };
 
     $scope.openSong=function(song){
