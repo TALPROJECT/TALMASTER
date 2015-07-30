@@ -385,13 +385,9 @@ $ionicModal.fromTemplateUrl('templates/tab-account.html', {
     $scope.modal.remove();
   });
 
-  
-  $scope.removeSong = function(song, index) {
-    $scope.myFavorites.splice(index, 1);
-  };
 
   $scope.openSong=function(song){
-    $window.open(song.open_url,"_system");
+    $window.open(song.open_url,"_system",'location=yes');
   };
   $scope.isPlaying=false;
   $scope.media = document.createElement('audio');
@@ -410,4 +406,9 @@ $ionicModal.fromTemplateUrl('templates/tab-account.html', {
         }
 
   };
+})
+.controller('TabCtrl', function($scope, $localStorage){
+  $scope.enteringFavorites=function(){
+  $scope.myFavorites = $localStorage.getObject('userFavoriteArray');
+  }
 });

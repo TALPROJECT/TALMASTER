@@ -391,7 +391,7 @@ $ionicModal.fromTemplateUrl('templates/tab-account.html', {
   };
 
   $scope.openSong=function(song){
-    $window.open(song.open_url,"_system");
+    $window.open(song.open_url,"_blank",'location=yes');
   };
   $scope.isPlaying=false;
   $scope.media = document.createElement('audio');

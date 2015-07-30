@@ -43,8 +43,8 @@
       <i class="ion-android-favorite-outline" style="font-size:32px" ng-if="!containSong(myFavorites, song);" ng-click="addSongToFavorites(song)"> </i> 
       <i class="ion-android-favorite" style="font-size:32px" ng-if="containSong(myFavorites, song);" ng-click="removeSongFromFavorites(song)"> </i> 
     
-      <p>{{song.name}}
-        {{song.artist}}
+      <p ng-click="playSong(song); refreshBlurring($index)">{{song.name}}
+       <p> {{song.artist}}</p>
       </p>
     </div>
 
