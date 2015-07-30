@@ -132,7 +132,25 @@ z-index: 1;
   }
 .tab-dash .ion-android-add-circle{
   font-size: 8vw;
-
+}
+.tab-dash .music-icon{
+  font-size: 18vw;
+  margin-left: 45vw;
+}
+.tab-dash .coms{
+  text-align: center;
+  font-size: 25px;
+  padding-top: 10px;
+  
+}
+.tab-dash .commentaire{
+  margin-top: 35vw;
+  font-weight: 100;
+  color: #637aa8;
+}
+.tab-dash .lobster-font{
+    font-family: 'Lobster', cursive;
+    font-weight: 100;
 }
 .add-song-button{
   display: inline-block;
