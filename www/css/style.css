@@ -132,6 +132,7 @@ z-index: 1;
     z-index: 1;
     border-radius: 10px;
   }
+
 .tab-dash .ion-android-add-circle{
   font-size: 8vw;
 }
@@ -188,6 +189,21 @@ z-index: 1;
 width: 80vw;
 display : inline-block;
 }
+
+.item-input-dash {
+  color: white;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  letter-spacing: -2px;
+  font-size:20px;
+  text-decoration: none;
+  background-color: transparent;
+}
+.item-input-dash input[type="text"]{
+  width : 100%;
+
+
+}
+
 
 /*FAV PAGE*/
 .settingsicon{
@@ -300,7 +316,7 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
   border-color: black;
   background-color: transparent;
 }
-.login-view textarea, input[type="text"], input[type="password"]{
+.login-view textarea, .login-view input[type="text"], .login-view input[type="password"]{
 	text-align: center;
 	padding-bottom: 15px;
 	color: black;

@@ -253,9 +253,6 @@
 
     $scope.imageClass=['','','','','','','','','','','','','','']; // va servir à l'affichage de l'image blurred
 
-    $scope.remove = function(list) {
-      ListLibrary.remove(list);
-    };
     $scope.selectedIndex = -1; 
 
     $scope.itemClicked = function ($index) {
@@ -310,25 +307,25 @@
 
 
     $scope.isPlaying=false;
-    $scope.media = document.createElement('audio');
+    $rootScope.media = document.createElement('audio');
       
       $scope.playSong = function(song) {
-        if ($scope.media.src===song.preview_url && $scope.isPlaying){
-          $scope.media.pause();
+        if ($rootScope.media.src===song.preview_url && $scope.isPlaying){
+          $rootScope.media.pause();
           $scope.isPlaying = false;
           return null;
         }
 
         else{
-          $scope.media.src = song.preview_url;
-          $scope.media.play();
+          $rootScope.media.src = song.preview_url;
+          $rootScope.media.play();
           $scope.isPlaying = true;
         }
       };
 
 
     $scope.stopSong = function() {
-      $scope.media.pause();
+      $rootScope.media.pause();
       $scope.isPlaying = false;
     };
     /*$scope.audio.addEventListener('ended', function() {
@@ -434,25 +431,30 @@
       $scope.modal.remove();
     });
 
-    $scope.removeSong = function(index) {
-      $rootScope.myFavorites.splice(index, 1);
+
+
+    
+    $scope.removeSong = function(song) {
+      $localStorage.removeElement('userFavoriteArray',song);
+      $rootScope.myFavorites=$localStorage.getObject('userFavoriteArray');
+
+
     };
 
     $scope.openSong=function(song){
       $window.open(song.open_url,"_system");
     };
     $scope.isPlaying=false;
-    $scope.media = document.createElement('audio');
     $scope.playSong = function(song) {
-      if ($scope.media.src===song.preview_url && $scope.isPlaying){
-        $scope.media.pause();
+      if ($rootScope.media.src===song.preview_url && $scope.isPlaying){
+        $rootScope.media.pause();
         $scope.isPlaying = false;
         return null;
       }
 
       else{
-        $scope.media.src = song.preview_url;
-        $scope.media.play();
+        $rootScope.media.src = song.preview_url;
+        $rootScope.media.play();
         $scope.isPlaying = true;
 
           }
