@@ -104,6 +104,12 @@ z-index: 1;
 .addSongButton{
   margin-left: 50vw;
 }
+#add-button-in-dash{
+  height:25%;
+  width:33%;
+  display: inline-block;
+}
+
 .myitem{
   border-radius: 10px;
   border-width: 1px;
