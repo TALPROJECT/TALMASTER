@@ -2,16 +2,30 @@
 
   <ion-content class="padding">
     <div class=" card">
-      <div class="item item-divider" >  <label class="item item-input"> 
-            <input type="text" placeholder="Your research" ng-model="myTitle">
+       <label class="item item-input"> 
+            <input type="text" placeholder="Your research" ng-model="myId">
           
-          </label></div>
+          </label>
       </div>
-<div class = "addSongButton ion-android-add-circle"  ng-click="addNewSong(myTitle)" > </div>
+	
+	<div class = "addSongButton ion-android-add-circle" ng-click="addNewSong(myId)"> 
     </div>
 
-<img collection-repeat="song in currentList" item-height="25%" item-width="33%"
-         ng-src="{{song.face}}">
 
+	<div collection-repeat="song in currentList" item-height="25%" item-width="33%">
+
+     <div back-img="{{song.face}}" ng-click="playSong(song); refreshBlurring($index)" 
+        class="image-collection-list base-class" ng-class="imageClass[$index]"> </div>
+	
+       	<div ng-if="imageClass[$index]!=my-class" class="text-on-blurred-image" ng-click="playSong(song); refreshBlurring($index)"> 
+
+          <p class="nametoartist"><br><h4 class="name">
+      {{song.name}}</h4>
+       <p class="nametoartist"> {{song.artist}}</p>
+
+      </p>
+     	</div>
+	</div>
+  
   </ion-content>
 </ion-view>

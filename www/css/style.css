@@ -4,7 +4,7 @@
   background-color: #e8ecf3;
   color: black;
   border-color: black;
-  font-family: 'Ubuntu', sans-serif;
+  /*font-family: 'Ubuntu', sans-serif;*/
   font-weight: 200;
 }
 
@@ -85,7 +85,8 @@ z-index: 1;
   position: relative;
   z-index: 0;
   margin-top: -30vw;
-  margin-left:10%;
+  /*margin-left:10%;*/
+  text-align: center;
 }
 
 .list-detail-page .nametoartist{
@@ -102,7 +103,7 @@ z-index: 1;
 .list-detail-page .hearticon{
     font-size: 32px;
     color: black;
-    margin-left: 30%;
+    margin-left: 0%;
 }
 /*.list-detail-page .animation {
   -webkit-transition: 0.2s;
@@ -176,6 +177,9 @@ z-index: 1;
 }
 .grossirboutton{
   font-size: 35px;
+}
+.favpage .artist{
+  font-family: 'Lobster', cursive;
 }
 
 /*ACCOUNT PAGE*/

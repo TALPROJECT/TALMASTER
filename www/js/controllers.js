@@ -372,7 +372,9 @@
     
     $scope.shouldShowDelete = false;
 
-    
+    $scope.data = {
+    showDelete: false
+  };
     // $scope.refreshFavorites = function(){
     //   $rootScope.myFavorites = $localStorage.getObject('userFavoriteArray'); 
     //  };

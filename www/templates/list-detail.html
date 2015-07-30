@@ -39,7 +39,7 @@
         class="image-collection-list base-class" ng-class="imageClass[$index]"> </div>
 
     <div ng-if="imageClass[$index]!=my-class" class="text-on-blurred-image"> 
-      <i class="ion-android-favorite hearticon hearticon animated tada" style="font-size:32px" ng-if="containSong(myFavorites, song);" ng-click="removeSongFromFavorites(song)"> </i> 
+      <i class="ion-android-favorite hearticon" style="font-size:32px" ng-if="containSong(myFavorites, song);" ng-click="removeSongFromFavorites(song)"> </i> 
       <i  class="ion-android-favorite-outline hearticon" style="font-size:32px" ng-if="!containSong(myFavorites, song);" ng-click="addSongToFavorites(song)"> </i> 
       
     
