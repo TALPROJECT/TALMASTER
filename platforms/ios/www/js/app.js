@@ -5,7 +5,7 @@
   // the 2nd parameter is an array of 'requires'
   // 'starter.services' is found in services.js
   // 'starter.controllers' is found in controllers.js
-  angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','starter.directives','ngAnimate'])
+  angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','starter.directives', 'ngAnimate'])
 
   .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -56,6 +56,16 @@
         'tab-dash': {
           templateUrl: 'templates/tab-dash.html',
           controller: 'DashCtrl'
+        }
+      }
+    })
+
+     .state('sendingToFriends', {
+      url: '/sendingToFriends',
+      views: {
+        'tab-dash': {
+          templateUrl: 'templates/sending-to-friends.html',
+          controller: 'SendingToFriendsCtrl'
         }
       }
     })
@@ -119,6 +129,12 @@
       url: '/',
       templateUrl: 'templates/connexion.html',
       controller: 'ConnexionCtrl'
+    })
+
+  .state('policy', {
+      url: '/policy',
+      templateUrl: 'templates/policy-page.html',
+      controller: 'PolicyCtrl'
     })
 
   .state('login', {

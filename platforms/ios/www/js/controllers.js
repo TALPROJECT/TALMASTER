@@ -1,9 +1,25 @@
   angular.module('starter.controllers', [])
 
-  .controller('DashCtrl', function($scope, $state, $localStorage, SongLibrary) {
-     
+  .controller('DashCtrl', function($scope, $state, Chats, $localStorage, SongLibrary, $ionicModal) {
+   
+   // Animation du logo music au click
+    $scope.moveButtons = function() {
+        var buttons = document.getElementById('buttons');
+        move(buttons)
+        .scale(1.8)
+        .duration('0.7s')
+        .then()
+          .rotate(360)
+          .duration('0.8s')
+        .set('color', 'black')  
+        .end();
+    }; 
+    
    $localStorage.setObject('userFavoriteArray', []);
    $scope.chansons = SongLibrary.all();
+   $scope.chanson=null;
+
+   $scope.chats=Chats.all();
     
    // ****** Fonctions recyclées depuis le list-detail ****
 
@@ -89,9 +105,52 @@
         }
       }
 
+      $scope.validateCurrentList = function(){
+
+      }
+
       $scope.account = function(){
        $state.go('tab.account');
       };
+
+// ******************** Modal Control ************************
+  $ionicModal.fromTemplateUrl('templates/sending-to-friends.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal
+    })  
+
+    $scope.openModal = function() {
+      $scope.modal.show();
+    }
+
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    };
+
+    $scope.$on('$destroy', function() {
+      $scope.modal.remove();
+    });
+
+    for (var i = $scope.chats.length - 1; i >= 0; i--) {
+    $scope.chats[i].friendClicked=false;
+  };
+
+    $scope.clickFriend=function($index){
+      if ($scope.chats[$index].friendClicked){
+        $scope.chats[$index].friendClicked=false;
+      }
+
+      else{
+       $scope.chats[$index].friendClicked=true;
+      }
+    }
+
+  })
+
+  .controller('SendingToFriendsCtrl', function(){
+
   })
 
   .controller('ConnexionCtrl', function($scope, $state,$timeout) {
@@ -220,7 +279,7 @@
     })
   .controller('NewFriendCtrl', function($scope, Chats, $state) {
     })
-  .controller('ChatDetailCtrl', function($scope, $stateParams, Chats, ListLibrary, SongLibrary) {
+  .controller('ChatDetailCtrl', function($scope, $stateParams, Chats, ListLibrary, SongLibrary,$ionicHistory) {
    
     $scope.chat = Chats.get($stateParams.chatId);
     $scope.lists = ListLibrary.all();
@@ -238,20 +297,24 @@
       }
       return res;
     }; */
+    $scope.goBack = function(){
+      console.log('ici');
+      $ionicHistory.goBack();
+    };
 
   })
 
-  .controller('ListDetailCtrl', function($scope, $stateParams, ListLibrary, SongLibrary, $ionicHistory, $window, $localStorage, $rootScope) {
+  .controller('ListDetailCtrl', function($scope, $stateParams, User, ListLibrary, SongLibrary, $ionicHistory, $window, $localStorage, $rootScope) {
+    
+    $scope.list = ListLibrary.get($stateParams.listId);
+
+
     $scope.chansons=SongLibrary.all();
-    $stateParams.list = ListLibrary.get($stateParams.listId);
     
     $rootScope.myFavorites=$localStorage.getObject('userFavoriteArray');
 
     $scope.imageClass=['','','','','','','','','','','','','','']; // va servir à l'affichage de l'image blurred
 
-    $scope.remove = function(list) {
-      ListLibrary.remove(list);
-    };
     $scope.selectedIndex = -1; 
 
     $scope.itemClicked = function ($index) {
@@ -272,6 +335,7 @@
       $rootScope.myFavorites = $localStorage.getObject('userFavoriteArray');
       if (!$scope.containSong($rootScope.myFavorites, song)){
         $localStorage.addElement('userFavoriteArray',song);
+        User.newFavorites++;
         $rootScope.myFavorites=$localStorage.getObject('userFavoriteArray');
       }
     };
@@ -306,25 +370,25 @@
 
 
     $scope.isPlaying=false;
-    $scope.media = document.createElement('audio');
+    $rootScope.media = document.createElement('audio');
       
       $scope.playSong = function(song) {
-        if ($scope.media.src===song.preview_url && $scope.isPlaying){
-          $scope.media.pause();
+        if ($rootScope.media.src===song.preview_url && $scope.isPlaying){
+          $rootScope.media.pause();
           $scope.isPlaying = false;
           return null;
         }
 
         else{
-          $scope.media.src = song.preview_url;
-          $scope.media.play();
+          $rootScope.media.src = song.preview_url;
+          $rootScope.media.play();
           $scope.isPlaying = true;
         }
       };
 
 
     $scope.stopSong = function() {
-      $scope.media.pause();
+      $rootScope.media.pause();
       $scope.isPlaying = false;
     };
     /*$scope.audio.addEventListener('ended', function() {
@@ -336,11 +400,7 @@
 
   })
 
-
-
-
-
-  .controller('AccountCtrl', function($scope, Chats, Profil) {
+  .controller('AccountCtrl', function($scope, Chats, Profil,$state) {
     $scope.settings = {
       enableFriends: true
     };
@@ -365,6 +425,9 @@
           $scope.showEditFav = false;
         
       };
+    $scope.goPolicy=function(){
+    $state.go('policy');
+  }
   })
   .controller('FavoritesCtrl', function($scope, User, Chats, Profil, $state, SongLibrary,$window,$ionicModal, $localStorage, $rootScope) {
 
@@ -432,35 +495,54 @@
     });
 
 
+
     
-    $scope.removeSong = function(song, index) {
+    $scope.removeSong = function(index) {
+      console.log(index);
+      console.log('ici');
+      console.log($rootScope.myFavorites);
       $rootScope.myFavorites.splice(index, 1);
+      $rootScope.myFavorites = $localStorage.getObject('userFavoriteArray');
+      // $localStorage.removeElement('userFavoriteArray',song);
+      // $rootScope.myFavorites=$localStorage.getObject('userFavoriteArray');
+
+
     };
 
     $scope.openSong=function(song){
       $window.open(song.open_url,"_system");
     };
     $scope.isPlaying=false;
-    $scope.media = document.createElement('audio');
     $scope.playSong = function(song) {
-      if ($scope.media.src===song.preview_url && $scope.isPlaying){
-        $scope.media.pause();
+      if ($rootScope.media.src===song.preview_url && $scope.isPlaying){
+        $rootScope.media.pause();
         $scope.isPlaying = false;
         return null;
       }
 
       else{
-        $scope.media.src = song.preview_url;
-        $scope.media.play();
+        $rootScope.media.src = song.preview_url;
+        $rootScope.media.play();
         $scope.isPlaying = true;
 
           }
   };
+  $scope.goPolicy=function(){
+    $state.go('policy');
+  }
 })
-.controller('TabCtrl', function($scope, $localStorage){
+.controller('TabCtrl', function($scope, User, $localStorage){
   $scope.enteringFavorites=function(){
   $scope.myFavorites = $localStorage.getObject('userFavoriteArray');
-  }
+  User.newFavorites=0;
+  } 
+ $scope.favCount = User.favoriteCount;
+})
+.controller('PolicyCtrl', function($scope,$ionicHistory){
+  $scope.goBack = function(){
+      console.log('ici');
+      $ionicHistory.goBack();
+    };
 });
 
 

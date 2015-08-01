@@ -41,7 +41,7 @@ a{
 /*CHAT PAGE */
 .chat-page .lastlist{
   color: black;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Lobster', cursive;
 }
 .chat-page .scroll-content {
     background-color: #e8ecf3;
@@ -86,7 +86,7 @@ z-index: 1;
 .text-on-blurred-image{
   position: relative;
   z-index: 0;
-  margin-top: -30vw;
+  margin-top: -25vw;
   /*margin-left:10%;*/
   text-align: center;
 }
@@ -139,27 +139,48 @@ z-index: 1;
 .tab-dash .music-icon{
   font-size: 18vw;
   margin-left: 45vw;
+  position: absolute;
+  margin-top: 50vw;
+  color : #e8ecf3;
+  -webkit-animation-duration: 1.7s;
+  -webkit-animation-iteration-count: infinite;
 }
+
 .tab-dash .coms{
+  margin-top: 65vw;
+  text-align: center;
+  font-size: 25px;
+  padding-top: 10px;
+  
+}
+.tab-dash .coms2{
+
   text-align: center;
   font-size: 25px;
   padding-top: 10px;
   
 }
 .tab-dash .commentaire{
-  margin-top: 35vw;
+  margin-top: -30vw;
   font-weight: 100;
-  color: #637aa8;
+  color: black;
+  height: 620px;
+  background-image: url('../img/guitar.jpg');
+  background-size: cover;
+
 }
 .tab-dash .lobster-font{
     font-family: 'Lobster', cursive;
     font-weight: 100;
 }
+.tab-dash .ext-on-blurred-dash{
+  margin-top: 
+}
 .add-song-button{
   display: inline-block;
   position : absolute;
   margin-left: 7vw;
-  margin-top: 2vw;
+  margin-top: 4.5vw;
 }
 #add-button-in-dash{
   height:25%;
@@ -189,6 +210,19 @@ z-index: 1;
 width: 80vw;
 display : inline-block;
 }
+.tab-dash .title{
+  font-family: 'Lobster', cursive;
+}
+.tab-dash .item-input-dash input[type="text"] {
+    width: 100%;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    border-radius: 20px;
+  }
+
+  .tab-dash .item-input-dash {
+    border-width: 0;
+  }
 
 .item-input-dash {
   color: white;
@@ -204,7 +238,7 @@ display : inline-block;
 .send-button-dash{
   position : absolute;
   font-size: 15vw;
-  margin-left: 2vw;
+  margin-left: 43vw;
 }
 
 
@@ -229,6 +263,10 @@ display : inline-block;
   font-family: 'Lobster', cursive;
 }
 
+.favpage .fav-item{
+  color: black;
+  margin-top: 5px;
+}
 /*ACCOUNT PAGE*/
 
 .profilname {
@@ -405,3 +443,11 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
  margin-top: 25px;
   margin-left: 5px;
 }
+
+/*TAB PAGE*/
+ .tab-page .tabs .tab-item .badge.badge-assertive,.tab-page .badge.badge-assertive {
+    background-color: #FF9696;
+    color: #fff;
+    opacity: 1;
+}
+

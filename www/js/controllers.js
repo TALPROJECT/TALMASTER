@@ -1,7 +1,20 @@
   angular.module('starter.controllers', [])
 
   .controller('DashCtrl', function($scope, $state, Chats, $localStorage, SongLibrary, $ionicModal) {
-     
+   
+   // Animation du logo music au click
+    $scope.moveButtons = function() {
+        var buttons = document.getElementById('buttons');
+        move(buttons)
+        .scale(1.8)
+        .duration('0.7s')
+        .then()
+          .rotate(360)
+          .duration('0.8s')
+        .set('color', 'black')  
+        .end();
+    }; 
+    
    $localStorage.setObject('userFavoriteArray', []);
    $scope.chansons = SongLibrary.all();
    $scope.chanson=null;
@@ -291,7 +304,7 @@
 
   })
 
-  .controller('ListDetailCtrl', function($scope, $stateParams, ListLibrary, SongLibrary, $ionicHistory, $window, $localStorage, $rootScope) {
+  .controller('ListDetailCtrl', function($scope, $stateParams, User, ListLibrary, SongLibrary, $ionicHistory, $window, $localStorage, $rootScope) {
     
     $scope.list = ListLibrary.get($stateParams.listId);
 
@@ -322,6 +335,7 @@
       $rootScope.myFavorites = $localStorage.getObject('userFavoriteArray');
       if (!$scope.containSong($rootScope.myFavorites, song)){
         $localStorage.addElement('userFavoriteArray',song);
+        User.newFavorites++;
         $rootScope.myFavorites=$localStorage.getObject('userFavoriteArray');
       }
     };
@@ -329,6 +343,7 @@
     $scope.removeSongFromFavorites = function(song){
       $localStorage.removeElement('userFavoriteArray', song);
       $rootScope.myFavorites=$localStorage.getObject('userFavoriteArray');
+      User.newFavorites--;
     };
 
     $scope.goBack = function(){
@@ -517,10 +532,12 @@
     $state.go('policy');
   }
 })
-.controller('TabCtrl', function($scope, $localStorage){
+.controller('TabCtrl', function($scope, User, $localStorage){
   $scope.enteringFavorites=function(){
   $scope.myFavorites = $localStorage.getObject('userFavoriteArray');
-  }
+  User.newFavorites=0;
+  } 
+ $scope.favCount = User.favoriteCount;
 })
 .controller('PolicyCtrl', function($scope,$ionicHistory){
   $scope.goBack = function(){

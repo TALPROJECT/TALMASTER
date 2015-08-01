@@ -4,49 +4,28 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view class="list-detail-page">
 
+<ion-view view-title="{{list.name}}" class="list-detail-page">
   <ion-nav-buttons >
 <!--       <i class="ion-chevron-left" side="left" style="font-size:32px" ng-click="goBack()"> </i>
  -->      <i class="ion-chevron-left" style="" style="font-size:32px" ng-click="goBack()"> </i>
   </ion-nav-buttons>
 
   <ion-content class="has-header padding">
-<!--
-  <div class="row" ng-repeat="song in chansons" ng-if="$index % 3 === 0" >
-        <div class="col pochette" ng-if="$index < chansons.length" >
-            <img ng-src="{{chansons[$index].face}}" width="100%" ng-click="playSong(chansons[$index])">
-            <h2 class="nomchanson">{{chansons[$index].name}}</h2>
-        <p >{{chansons[$index].artist}}</p>
-        </div>
-        <div class="col pochette" ng-if="$index + 1 < chansons.length">
-        <img ng-src="{{chansons[$index + 1].face}}" width="100%" ng-click="playSong(chansons[$index+1])"/>
-            <h2 class="nomchanson">{{chansons[$index + 1].name}}</h2>
-        <p>{{chansons[$index + 1].artist}}</p>
-        </div>
-        <div class="col pochette" ng-if="$index + 2 < chansons.length">
-        <img ng-src="{{chansons[$index + 2].face}}" width="100%" ng-click="playSong(chansons[$index+2])"/>
-            <h2 class="nomchanson">{{chansons[$index + 2].name}}</h2>
-        <p>{{chansons[$index + 2].artist}}</p>
-        </div>
-    </div> 
-  -->
-
-
     <div collection-repeat="song in chansons" item-height="25%" item-width="33%">
 
         <div back-img="{{song.face}}" ng-click="playSong(song); refreshBlurring($index)" 
         class="image-collection-list base-class" ng-class="imageClass[$index]"> </div>
 
     <div ng-if="imageClass[$index]!=my-class" class="text-on-blurred-image"> 
-      <i class="ion-android-favorite hearticon" style="font-size:32px" ng-if="containSong(myFavorites, song);" ng-click="removeSongFromFavorites(song)"> </i> 
-      <i  class="ion-android-favorite-outline hearticon" style="font-size:32px" ng-if="!containSong(myFavorites, song);" ng-click="addSongToFavorites(song)"> </i> 
-      
-    
 
-      <p ng-click="playSong(song); refreshBlurring($index)" class="nametoartist"><h4>
+      <i class="ion-android-favorite hearticon" style="font-size:32px" ng-if="containSong(myFavorites, song);" ng-click="removeSongFromFavorites(song.id)"> </i> 
+
+      <i  class="ion-android-favorite-outline hearticon" style="font-size:32px" ng-if="!containSong(myFavorites, song);" ng-click="addSongToFavorites(song)"> </i> 
+ 
+      <p class="nametoartist" ng-click="playSong(song); refreshBlurring($index)"><h4 ng-click="playSong(song); refreshBlurring($index)">
       {{song.name}}</h4>
-       <p class="nametoartist"> {{song.artist}}</p>
+       <p class="nametoartist" ng-click="playSong(song); refreshBlurring($index)"> {{song.artist}}</p>
 
       </p>
     </div>

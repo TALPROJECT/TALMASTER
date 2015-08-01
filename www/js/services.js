@@ -243,7 +243,9 @@
     }])
 
     .factory('User', ['$http','$localStorage','$rootScope','$ionicLoading','$ionicPlatform','$location','$q',function($http,$localStorage,$rootScope,$ionicLoading,$ionicPlatform,$location, $q, $connection){
-      var obj={};
+      var obj={
+        newFavorites: 0
+      };
       obj.register=function(user){
          return  $http.post('server/create/')
       }
@@ -264,6 +266,9 @@
 
         return defer.promise;
       }
+    }
+    obj.favoriteCount = function() {
+    return obj.newFavorites;
     }
     return obj;
     }]);

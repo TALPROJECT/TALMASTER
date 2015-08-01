@@ -41,13 +41,15 @@ a{
 /*CHAT PAGE */
 .chat-page .lastlist{
   color: black;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Lobster', cursive;
 }
 .chat-page .scroll-content {
     background-color: #e8ecf3;
   }
 /*CHAT DETAIL PAGE*/
-
+.ion-chevron-left{
+  font-size: 30px;
+}
 /*LIST DETAIL PAGE */
 .list-detail-page .nomchanson{
   font-size: 3vw;
@@ -130,12 +132,41 @@ z-index: 1;
     z-index: 1;
     border-radius: 10px;
   }
+
 .tab-dash .ion-android-add-circle{
-  font-size: 25px;
-  margin-right: 15px;
+  font-size: 8vw;
 }
-.addSongButton{
-  margin-left: 50vw;
+.tab-dash .music-icon{
+  font-size: 18vw;
+  margin-left: 45vw;
+  color : #e8ecf3;
+  -webkit-animation-duration: 1.7s;
+  -webkit-animation-iteration-count: infinite;
+}
+.tab-dash .coms{
+  text-align: center;
+  font-size: 25px;
+  padding-top: 10px;
+  
+}
+.tab-dash .commentaire{
+  margin-top: 30vw;
+  font-weight: 100;
+  color: black;
+  height: 500px;
+  /*background-image: url('../img/guitar.jpg');
+  background-repeat: no-repeat;*/
+
+}
+.tab-dash .lobster-font{
+    font-family: 'Lobster', cursive;
+    font-weight: 100;
+}
+.add-song-button{
+  display: inline-block;
+  position : absolute;
+  margin-left: 7vw;
+  margin-top: 4.5vw;
 }
 #add-button-in-dash{
   height:25%;
@@ -160,6 +191,41 @@ z-index: 1;
 .tab-dash .name{
   text-align: center;
 }
+
+.search-bar{
+width: 80vw;
+display : inline-block;
+}
+.tab-dash .title{
+  font-family: 'Lobster', cursive;
+}
+.tab-dash .item-input-dash input[type="text"] {
+    width: 100%;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+  }
+
+  .tab-dash .item-input-dash {
+        border-width: 0;
+  }
+
+.item-input-dash {
+  color: white;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  letter-spacing: -2px;
+  font-size:20px;
+  text-decoration: none;
+  background-color: transparent;
+}
+.item-input-dash input[type="text"]{
+  width : 100%;
+}
+.send-button-dash{
+  position : absolute;
+  font-size: 15vw;
+  margin-left: 2vw;
+}
+
 
 /*FAV PAGE*/
 .settingsicon{
@@ -272,7 +338,7 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
   border-color: black;
   background-color: transparent;
 }
-.login-view textarea, input[type="text"], input[type="password"]{
+.login-view textarea, .login-view input[type="text"], .login-view input[type="password"]{
 	text-align: center;
 	padding-bottom: 15px;
 	color: black;
@@ -314,6 +380,9 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
   color: #637aa8;
   margin-left: 45vw;
 }
+.newfriendpage .ion-chevron-down{
+  font-size: 30px;
+}
 .newfriendpage .placeholder-icon{
   font-size: 20px;
 }
@@ -324,7 +393,7 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 .newfriendpage .addarrow{
-  text-align: left;
+  text-align: center;
   margin-top: 5vw;
   color: #637aa8;
   font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -350,4 +419,14 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
 .newfriendpage .animation.ng-leave.ng-leave-active {
   opacity: 0;
 }
+.newfriendpage .friend-name{
+ position: absolute;
+ margin-top: 25px;
+  margin-left: 5px;
+}
 
+ .tab-page .tabs .tab-item .badge.badge-assertive,.tab-page .badge.badge-assertive {
+    background-color: #FF9696;
+    color: #fff;
+    opacity: 1;
+}

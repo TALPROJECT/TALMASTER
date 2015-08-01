@@ -1,31 +1,41 @@
 <ion-view view-title="Share a List" class="tab-dash"> 
-
   <ion-content class="padding">
-    <div class=" card">
-       <label class="item item-input"> 
-            <input type="text" placeholder="Your research" ng-model="myId">
-          
+
+    <div class="search-bar">
+       <label class="item item-input-dash"> 
+            <input type="text" placeholder="Search your song" ng-model="myId">
+          </input>
           </label>
       </div>
-	
-	<div class = "addSongButton ion-android-add-circle" ng-click="addNewSong(myId)"> 
+	<div class = "add-song-button ion-android-add-circle" ng-click="addNewSong(myId)"> 
     </div>
+
+	<div ng-show="currentList.length==0" class="commentaire" ng-click="moveButtons()">
+		<i id="buttons" class="icon ion-ios-musical-notes music-icon " ></i><br>
+    <p>
+	 	<p class="coms">Create a <a class="lobster-font">playlist</a>
+		<p class="coms">of maximum eleven <a class="lobster-font">songs</a>
+	</div>
 
 
 	<div collection-repeat="song in currentList" item-height="25%" item-width="33%">
 
-     <div back-img="{{song.face}}" ng-click="playSong(song); refreshBlurring($index)" 
-        class="image-collection-list base-class" ng-class="imageClass[$index]"> </div>
+    <div back-img="{{song.face}}" ng-click="playSong(song); refreshBlurring($index)" 
+    class="image-collection-list base-class" ng-class="imageClass[$index]"> </div>
 	
-       	<div ng-if="imageClass[$index]!=my-class" class="text-on-blurred-image" ng-click="playSong(song); refreshBlurring($index)"> 
+    <div ng-if="imageClass[$index]!=my-class" class="text-on-blurred-image" ng-click="playSong(song); refreshBlurring($index)"> 
 
           <p class="nametoartist"><br><h4 class="name">
       {{song.name}}</h4>
        <p class="nametoartist"> {{song.artist}}</p>
-
       </p>
-     	</div>
-	</div>
-  
+
+
+    </div>  
+  </div>
+
+  <i ng-hide="currentList.length==0" class="ion-ios-checkmark-outline send-button-dash" ng-click="openModal()"></i>
+
+
   </ion-content>
 </ion-view>

@@ -2,9 +2,11 @@
   "name": "talproject",
   "private": "true",
   "devDependencies": {
-    "ionic": "driftyco/ionic-bower#1.0.1"
+    "ionic": "driftyco/ionic-bower#1.0.1",
+    "platform": "~1.3.0"
   },
   "dependencies": {
-    "angular-masonry": "~0.11.1"
+    "angular-masonry": "~0.11.1",
+    "ngFx": "~1.1.0"
   }
 }

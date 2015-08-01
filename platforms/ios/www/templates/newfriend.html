@@ -20,7 +20,7 @@
         <li class="animation" ng-repeat="friend in chats | filter:query | orderBy:orderProp">
            <label class="checkbox">
             <input type="checkbox" ng-model="friend.selected" ng-change="change(friend)"class="coms">
-          </label>{{friend.name}}
+          </label> <a class="friend-name">{{friend.name}} </a>
         </li>
       </ul>
 <div ng-show="query==''">

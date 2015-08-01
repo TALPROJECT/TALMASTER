@@ -17,64 +17,9 @@
       name: 'Alexandre Attia',
       lastList: 'Sunshine in Da Evening',
       face: 'https://media.licdn.com/media/AAEAAQAAAAAAAAKyAAAAJGU4ODY2YWYxLThiMjktNGMxYS1iMWY5LTE1NmJmMTI3ZDIxOQ.jpg',
-      email: 'alexandre.attia@wanadoo.fr'}, 
-//     {  id: 2,
-// <<<<<<< HEAD
-//       name: 'Act Like You Know',
-//       artist: 'Fat Larry\'s band',
-//       preview_url : 'https://p.scdn.co/mp3-preview/1507d2c0c115fd853efd548df33e3ca8e892c14d',
-//       open_url : 'https://open.spotify.com/album/7EJ7WCaYLgelKpBONqOCaN',
-//       face: 'https://i.scdn.co/image/476d9145e734048ef6075162d7f49da32ce68c2f'
-//     }, {
-//       id: 3,
-//       name: 'Que Tal America',
-//       artist: 'Two Man Sound',
-//       preview_url:'https://p.scdn.co/mp3-preview/ad3864be4463b32dcde2acd7b5f166bac59b1401',
-//       open_url : 'https://open.spotify.com/album/1lEvq3ewf4pHTgk4aqe7Nl',
-//       face: 'https://i.scdn.co/image/ec5e967592c9e46f5b195e20bcb965588f1031b2'
-//     }, {
-//       id: 4,
-//       name: 'Roxanne',
-//       artist: 'The Police',
-//       preview_url:'https://p.scdn.co/mp3-preview/ebaa5cd3d12e50de4075948486011456c0d4247f',
-//       open_url : 'https://open.spotify.com/album/2HPpGOkeO0y2I071Js9s1A',
-//       face: 'https://i.scdn.co/image/7241f947ea45d1cd2c9716adc94f85668e511dcf'
-//     }, {
-//       id: 5,
-//       name: 'You Can\'t Always Get What You Want',
-//       artist: 'The Rolling Stones',
-//       preview_url : 'https://p.scdn.co/mp3-preview/75e92f88be509135ea97ba4cc7161f202d15f87a',
-//       open_url : 'https://open.spotify.com/track/72WZtWs6V7uu3aMgMmEkYe',
-//       face: 'https://i.scdn.co/image/91205a1c80960d7055f8ed1bbe022f195e1767a4'
-//     }, {
-//       id: 6,
-//       name: 'Candy\'s Room',
-//       artist: 'Bruce Springsteen',
-//       preview_url:'https://p.scdn.co/mp3-preview/f34abf05a7cba0b94c72e84178d9b3a6a72bcbe1',
-//       open_url : 'https://open.spotify.com/track/3p7W5VvPBZmuvkagBE2RbR',
-//       face: 'https://i.scdn.co/image/26d8c4db7622f1adecbb7ffc28a4dcdd8be907ac'
-//     }, {
-//       id: 7,
-//       name: 'Voyager',
-//       artist: 'Daft Punk',
-//       preview_url:'https://p.scdn.co/mp3-preview/90f22d693596f88ec9f07381eabe16de81032b7b',
-//       open_url : 'https://open.spotify.com/track/7cMFjxhbXBpOlais7KMF3j',
-//       face: 'https://i.scdn.co/image/ed01f028698b4211343f02109196939cfeadd06b'
-//     }, {
-//       id: 8,
-//       name: 'California Roll',
-//       artist: 'Snoop Dogg',
-//       preview_url:'https://p.scdn.co/mp3-preview/9b31322fece92d59789d403e0dfec3f5a5c7c5b6',
-//       open_url : 'https://open.spotify.com/track/1LmOaMuUPQD6BrK9fuGFa8',
-//       face: 'https://i.scdn.co/image/33a10cd598e200aabb95e817387e277fc74607ca'
-//     }, {
-//       id: 9,
-//       name: 'Walk of Life',
-//       artist: 'Dire Straits',
-//       preview_url:'https://p.scdn.co/mp3-preview/687ee71b2d17a374732d4666b608424ebdd8df68',
-//       open_url : 'https://open.spotify.com/track/7w4Tbkbx081vRJa8ol56Qf',
-//       face: 'https://i.scdn.co/image/2c8cf891d246b0aadf95a2c483b5b243aeda8a41'
-{ id: 1,
+      email: 'alexandre.attia@wanadoo.fr'
+    },{ 
+      id: 1,
       name: 'Le Krull',
       lastList: 'Doucement le matin ...',
       face: 'http://www.unmondeailleurs.net/wp-content/uploads/antillais_guadeloupe.jpg'
@@ -298,7 +243,9 @@
     }])
 
     .factory('User', ['$http','$localStorage','$rootScope','$ionicLoading','$ionicPlatform','$location','$q',function($http,$localStorage,$rootScope,$ionicLoading,$ionicPlatform,$location, $q, $connection){
-      var obj={};
+      var obj={
+        newFavorites: 0
+      };
       obj.register=function(user){
          return  $http.post('server/create/')
       }
@@ -319,6 +266,9 @@
 
         return defer.promise;
       }
+    }
+    obj.favoriteCount = function() {
+    return obj.newFavorites;
     }
     return obj;
     }]);
