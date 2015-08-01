@@ -20,3 +20,19 @@ Aug  1 16:01:06 MBPdeAlexandre.home rtcreporting[19968] <Debug>: setMessageLoggi
 Aug  1 16:01:13 MBPdeAlexandre.home rtcreporting[19968] <Debug>: initWithSessionInfo: XPC connection interrupted
 Aug  1 16:01:13 MBPdeAlexandre.home rtcreporting[19968] <Debug>: initWithSessionInfo: XPC connection interrupted
 2015-08-01 16:01:13.288 Bround[19968:4485058] Terminating since there is no system app.
+2015-08-01 17:25:33.813 Bround[20506:4550656] Apache Cordova native platform version 3.8.0 is starting.
+2015-08-01 17:25:33.817 Bround[20506:4550656] Multi-tasking -> Device: YES, App: YES
+2015-08-01 17:25:33.826 Bround[20506:4550656] Unlimited access to network resources
+2015-08-01 17:25:34.029 Bround[20506:4550656] [CDVTimer][keyboard] 0.051975ms
+2015-08-01 17:25:34.130 Bround[20506:4550656] [CDVTimer][splashscreen] 101.149023ms
+2015-08-01 17:25:34.130 Bround[20506:4550656] [CDVTimer][TotalPluginStartup] 101.845980ms
+2015-08-01 17:25:34.227 Bround[20506:4550656] Resetting plugins due to page load.
+2015-08-01 17:25:34.693 Bround[20506:4550656] Finished load of: file:///Users/alexandreattia/Library/Developer/CoreSimulator/Devices/7D3271DB-085D-4993-8018-A5A10D176FF8/data/Containers/Bundle/Application/CD36D8CB-6609-43B7-A045-B5F7DC79F4E2/Bround.app/www/index.html#/tab/dash
+Aug  1 17:25:45 MBPdeAlexandre.home rtcreporting[20506] <Info>: logging starts...
+Aug  1 17:25:45 MBPdeAlexandre.home rtcreporting[20506] <Debug>: setMessageLoggingBlock: called
+Aug  1 17:25:48 MBPdeAlexandre.home rtcreporting[20506] <Debug>: setMessageLoggingBlock: called
+2015-08-01 17:25:50.652 Bround[20506:4550656] ici
+2015-08-01 17:25:51.450 Bround[20506:4550656] ici
+Aug  1 17:26:09 MBPdeAlexandre.home rtcreporting[20506] <Debug>: initWithSessionInfo: XPC connection interrupted
+Aug  1 17:26:09 MBPdeAlexandre.home rtcreporting[20506] <Debug>: initWithSessionInfo: XPC connection interrupted
+2015-08-01 17:26:09.428 Bround[20506:4551082] Terminating since there is no system app.

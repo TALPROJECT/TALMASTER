@@ -451,3 +451,7 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
     opacity: 1;
 }
 
+/*SENDING FRIENDS*/
+.sending-friends-page .icon_modal{
+  font-size: 35px;
+}

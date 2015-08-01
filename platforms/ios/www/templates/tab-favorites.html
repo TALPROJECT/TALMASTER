@@ -14,11 +14,7 @@
 
       <ion-item ng-repeat="song in myFavorites" class="item-avatar itemfav" >
         	<img ng-src="{{ song.face }}" ng-click="playSong(song)">
-        	 <b >{{ song.name}}</b> - <a class="artist">{{song.artist }}</a>
-
-
-
-        	<i class="icon-right ion-chevron-right" ng-click="openSong(song)"></i>
+        	 <p ng-click="openSong(song)" class="fav-item"><b >{{ song.name}}</b> - <a class="artist">{{song.artist }}</a> <i class="icon-right ion-chevron-right" ng-click="openSong(song)"></i></p>
 
         	<ion-option-button class="button-assertive" ng-click="removeSong($index)">
        	    <i class="ion-close-circled deletebutton"  ></i>
@@ -30,6 +26,5 @@
 
       </ion-item>
     </ion-list>
-
   </ion-content>
 </ion-view>

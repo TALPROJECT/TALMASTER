@@ -343,6 +343,7 @@
     $scope.removeSongFromFavorites = function(song){
       $localStorage.removeElement('userFavoriteArray', song);
       $rootScope.myFavorites=$localStorage.getObject('userFavoriteArray');
+      User.newFavorites--;
     };
 
     $scope.goBack = function(){
