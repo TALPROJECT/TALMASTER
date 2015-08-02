@@ -3,7 +3,9 @@
   .controller('DashCtrl', function($scope, $state, Chats, $localStorage, SongLibrary, $ionicModal) {
    
    // Animation du logo music au click
+   $scope.bigIcon=false;
     $scope.moveButtons = function() {
+
         var buttons = document.getElementById('buttons');
         move(buttons)
         .scale(1.8)
@@ -13,7 +15,32 @@
           .duration('0.8s')
         .set('color', 'black')  
         .end();
+
+       
     }; 
+    $scope.moveButtonsBack = function() {
+        var buttons = document.getElementById('buttons');
+        move(buttons)
+        .scale(0.5)
+        .duration('0.7s')
+        .then()
+          .rotate(0)
+          .duration('0.8s')
+        .set('color', '#00eaff')  
+        .end();
+   
+    };
+
+    $scope.moveBigButton=function(){
+      if ( $scope.bigIcon==false){
+        $scope.moveButtons();
+         $scope.bigIcon=true;
+      }
+      else{
+      $scope.moveButtonsBack();
+      $scope.bigIcon=false;
+      }
+    }
     
    $localStorage.setObject('userFavoriteArray', []);
    $scope.chansons = SongLibrary.all();
@@ -103,6 +130,13 @@
             preview_url : songToAdd.preview_url,
             face: songToAdd.face});
         }
+      }
+      $scope.clearList=function(){
+        $scope.currentList=[];
+      }
+
+      $scope.removeSong=function(index){
+        $scope.currentList.splice(index,1);
       }
 
       $scope.validateCurrentList = function(){

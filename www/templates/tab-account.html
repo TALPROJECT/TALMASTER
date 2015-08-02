@@ -12,7 +12,7 @@
       <ion type="item-text-wrap">
         <img class ="profilpic" ng-src="{{profils.face}}">
         <br>
-        <h2 class="profilname">{{profils.name}} <a class="ion-edit" ng-click="editNameClick()"> </a> 
+        <h2 class="profilname"><a class="lobster-font">{{profils.name}}</a> <a class="ion-edit" ng-click="editNameClick()"> </a> 
           <div ng-show="showEdit">  <input class ="ech" type="text" placeholder="Your Name" ng-model="myName" > <div class = "ion-ios-color-wand" ng-click="addNewName(myName)"> </input>
             </div>
 
@@ -22,7 +22,7 @@
         <h3 class="email"> {{profils.email}} </h3>
         <br><br>
         <ion-list>
-        <ion-item><i class="ion-music-note accounticon"></i>  My Favorite Song is {{profils.FavoritedSong}} <a class="ion-edit" ng-click="editFavClick()"> </a>  </ion-item>
+        <ion-item><i class="ion-music-note accounticon"></i>  My Favorite Song is <a class="lobster-font">{{profils.FavoritedSong}}</a> <a class="ion-edit" ng-click="editFavClick()"> </a>  </ion-item>
          
          <label class="item item-input" ng-show="showEditFav">
           <span class="input-label"> Your Favorite Song</span>
