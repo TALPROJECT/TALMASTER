@@ -50,6 +50,9 @@ a{
 .ion-chevron-left{
   font-size: 30px;
 }
+.chat-detail-page .lobster-font{  
+  font-family: 'Lobster', cursive;
+}
 /*LIST DETAIL PAGE */
 .list-detail-page .nomchanson{
   font-size: 3vw;
@@ -124,7 +127,10 @@ z-index: 1;
 }*/
 
 /*DASH PAGE*/
+.tab-dash .title-bar{
+  width: 70%;
 
+}
 .tab-dash [collection-repeat] {
     left: 0 !important;
     top: 0 !important;
@@ -184,11 +190,11 @@ z-index: 1;
   margin-top: 
 }
 .add-song-button{
-  font-size: 30px;
+  font-size: 25px;
   display: inline-block;
   position : absolute;
   margin-left: 4vw;
-  margin-top: 5vw;
+  margin-top: 4vw;
 }
 #add-button-in-dash{
   height:25%;
@@ -221,14 +227,32 @@ display : inline-block;
 .tab-dash .title{
   font-family: 'Lobster', cursive;
 }
+
+.tab-dash .name-playlist{
+  line-height: 5px;
+  margin-bottom: -25px;
+  color: black;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  letter-spacing: 0px;
+}
 .tab-dash .item-input-dash input[type="text"] {
     width: 100%;
     font-family: 'Lobster', cursive;
     text-align: center;
     border-radius: 20px;
+    height: 20px;
+    display: inline-block;
+  }
+.tab-dash .item-input-list input[type="text"] {
+    width: 100%;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    border-radius: 20px;
+    height: 20px;
+    display: inline-block;
   }
 
-  .tab-dash .item-input-dash {
+.tab-dash .item-input-dash {
     border-width: 0;
   }
 .tab-dash .badge-delete{
@@ -236,6 +260,18 @@ display : inline-block;
       margin-left: -4px;
       position: absolute;
 
+}
+.tab-dash .name-list{
+  margin-left: 3vw;
+}
+.tab-dash .item-input-list input[type="text"] {
+
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    border-radius: 20px;
+    height: 20px;
+    display: inline-block;
+    width: 80%;
 }
 .tab-page .badge.badge-assertive {
     background-color: #FF9696;
@@ -256,6 +292,15 @@ display : inline-block;
   text-decoration: none;
   background-color: transparent;
 }
+.item-input-list {
+  color: white;
+  letter-spacing: -2px;
+  font-size:20px;
+  text-decoration: none;
+  background-color: transparent;
+  width: 120%;
+  border-width: 0px;
+}
 .item-input-dash input[type="text"]{
   width : 100%;
 }
@@ -268,6 +313,12 @@ display : inline-block;
   position : absolute;
   font-size: 15vw;
   margin-left: 36vw;
+}
+.tab-dash .title-list{
+  color: black;
+  font-weight: bold;
+  font-family: 'Poiret One', cursive;
+  letter-spacing: 0.5px;
 }
 
 /*FAV PAGE*/
@@ -486,7 +537,59 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
 .sending-friends-page .icon_modal{
   font-size: 35px;
 }
+.sending-friends-page .lobster-font{
+  font-family: 'Lobster', cursive;
+}
+.sending-friends-page .searchicon{
+  font-size: 70px;
+  color: #637aa8;
+  margin-left: 45vw;
+}
 
+.sending-friends-page .coms{
+  margin-top: 4vw;
+  text-align: center;
+  color: #637aa8;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.sending-friends-page .addarrow{
+  text-align: center;
+  margin-top: 5vw;
+  color: #637aa8;
+  /*font-family: 'Yanone Kaffeesatz', sans-serif;*/
+  font-size: 20px;
+  vertical-align: text-bottom;
+}
+
+.sending-friends-page .animation {
+  -webkit-transition: 0.3s;
+  -moz-animation: 0.3s;
+  -o-animation:  0.3s;
+  animation:  0.3s;
+}
+.sending-friends-page .animation.ng-enter {
+  opacity: 0;
+}
+.sending-friends-page .animation.ng-leave {
+  opacity: 1;
+}
+.sending-friends-page .animation.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.sending-friends-page .animation.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+.sending-friends-page .friend-name{
+ position: absolute;
+ margin-top: 25px;
+  margin-left: 5px;
+}
+.sending-friends-page .item-input input[type="text"] {
+    width: 100%;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    border-radius: 20px;
+  }
 /*ALL FRIENDS PLAGE*/
 
 .allfriendpage  .ion-chevron-down .icon_modal{

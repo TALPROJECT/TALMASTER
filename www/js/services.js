@@ -163,25 +163,25 @@
         name: 'Sunset In da Morning',
         content: [1,4,5,6],
         sender_id: 1,
-        date: 0
+        date: 19.07
       },{
         id: 1,
         name: 'Sunset In da Evening',
         content: [2,7,8,9],
         sender_id: 1,
-        date: 0
+        date: 18.07
       },{
         id: 2,
         name: 'Night With Da Girl',
         content: [0,3,4,2],
         sender_id: 0,
-        date: 0
+        date: 18.07
       },{
         id: 3,
         name: 'Peypouze',
         content: [1,8,9,7],
         sender_id: 0,
-        date: 0
+        date: 17.07
       }];
 
       return {

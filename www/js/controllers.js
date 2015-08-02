@@ -2,7 +2,7 @@
 
   .controller('DashCtrl', function($scope, $state, Chats, $localStorage, SongLibrary, $ionicModal) {
    
-   // Animation du logo music au click
+   // ANIMATION DU LOGO MUSIC 
    $scope.bigIcon=false;
     $scope.moveButtons = function() {
 
@@ -18,7 +18,16 @@
 
        
     }; 
+    $scope.getRandomColor=function() {
+    var letters = '0123456789ABCDEF'.split('');
+    var colorandom = '#';
+    for (var i = 0; i < 6; i++ ) {
+        colorandom += letters[Math.floor(Math.random() * 16)];
+    }
+    return colorandom;
+}
     $scope.moveButtonsBack = function() {
+      
         var buttons = document.getElementById('buttons');
         move(buttons)
         .scale(0.5)
@@ -26,7 +35,7 @@
         .then()
           .rotate(0)
           .duration('0.8s')
-        .set('color', '#00eaff')  
+        .set('color', 'red')  
         .end();
    
     };
@@ -180,7 +189,34 @@
        $scope.chats[$index].friendClicked=true;
       }
     }
+  //});
+   $scope.selectedCounter = 0;
 
+
+    $scope.change = function (item) {
+          if (item.selected) {
+              $scope.selectedCounter++
+          } else {
+              $scope.selectedCounter--
+          }
+      };
+
+    $scope.counterPositive=function(){
+      if($scope.selectedCounter == 0){
+        return false;
+      }
+      else{
+        return true;
+      }
+    };
+     $scope.counterMoreOne=function(){
+      if($scope.selectedCounter == 1){
+        return true;
+      }
+      else{
+        return false;
+      }
+    };
   })
 
   .controller('SendingToFriendsCtrl', function(){

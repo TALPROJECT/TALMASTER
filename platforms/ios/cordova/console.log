@@ -36,3 +36,19 @@ Aug  1 17:25:48 MBPdeAlexandre.home rtcreporting[20506] <Debug>: setMessageLoggi
 Aug  1 17:26:09 MBPdeAlexandre.home rtcreporting[20506] <Debug>: initWithSessionInfo: XPC connection interrupted
 Aug  1 17:26:09 MBPdeAlexandre.home rtcreporting[20506] <Debug>: initWithSessionInfo: XPC connection interrupted
 2015-08-01 17:26:09.428 Bround[20506:4551082] Terminating since there is no system app.
+2015-08-02 14:16:13.698 Bround[21816:4681133] Apache Cordova native platform version 3.8.0 is starting.
+2015-08-02 14:16:13.702 Bround[21816:4681133] Multi-tasking -> Device: YES, App: YES
+2015-08-02 14:16:13.712 Bround[21816:4681133] Unlimited access to network resources
+2015-08-02 14:16:13.924 Bround[21816:4681133] [CDVTimer][keyboard] 0.071049ms
+2015-08-02 14:16:14.024 Bround[21816:4681133] [CDVTimer][splashscreen] 99.530995ms
+2015-08-02 14:16:14.024 Bround[21816:4681133] [CDVTimer][TotalPluginStartup] 100.242019ms
+2015-08-02 14:16:14.121 Bround[21816:4681133] Resetting plugins due to page load.
+2015-08-02 14:16:14.711 Bround[21816:4681133] Finished load of: file:///Users/alexandreattia/Library/Developer/CoreSimulator/Devices/7D3271DB-085D-4993-8018-A5A10D176FF8/data/Containers/Bundle/Application/EC34CFA9-60CE-40DE-BC85-46F3AC272BA3/Bround.app/www/index.html#/tab/dash
+2015-08-02 16:03:24.213 Bround[22362:4765873] Apache Cordova native platform version 3.8.0 is starting.
+2015-08-02 16:03:24.217 Bround[22362:4765873] Multi-tasking -> Device: YES, App: YES
+2015-08-02 16:03:24.227 Bround[22362:4765873] Unlimited access to network resources
+2015-08-02 16:03:24.438 Bround[22362:4765873] [CDVTimer][keyboard] 0.063956ms
+2015-08-02 16:03:24.528 Bround[22362:4765873] [CDVTimer][splashscreen] 90.406001ms
+2015-08-02 16:03:24.529 Bround[22362:4765873] [CDVTimer][TotalPluginStartup] 91.075003ms
+2015-08-02 16:03:24.623 Bround[22362:4765873] Resetting plugins due to page load.
+2015-08-02 16:03:24.818 Bround[22362:4765873] Finished load of: file:///Users/alexandreattia/Library/Developer/CoreSimulator/Devices/7D3271DB-085D-4993-8018-A5A10D176FF8/data/Containers/Bundle/Application/12BED86A-7876-448B-B696-889AB94E7A99/Bround.app/www/index.html#/tab/dash

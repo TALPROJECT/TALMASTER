@@ -1,6 +1,11 @@
 <ion-view view-title="Share a List" class="tab-dash"> 
   <ion-content class="padding">
-
+<div class="title-bar">
+       <label class="item item-input-list name-playlist"> 
+           <a class="title-list">Title :</a><input class="name-list" type="text" placeholder="Name of your playlist">
+          </input>
+          </label>
+      </div>
     <div class="search-bar">
        <label class="item item-input-dash"> 
             <input type="text" placeholder="Search your song" ng-model="myId">
@@ -22,7 +27,7 @@
 	<div collection-repeat="song in currentList" item-height="25%" item-width="33%">
 <span class="badge badge-assertive" ng-click="removeSong($index)"><i class="ion-close-round badge-delete"></i></span>
     <div back-img="{{song.face}}" ng-click="playSong(song); refreshBlurring($index)" 
-    class="image-collection-list base-class" ng-class="imageClass[$index]"> </div>
+    class="image-collection-list base-class animation" ng-class="imageClass[$index]"> </div>
 	 
     <div ng-if="imageClass[$index]!=my-class" class="text-on-blurred-image" ng-click="playSong(song); refreshBlurring($index)"> 
 
