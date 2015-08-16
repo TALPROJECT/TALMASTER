@@ -500,6 +500,12 @@
     $state.go('policy');
   }
   })
+  .controller('SongDetailCtrl', function($scope, User, Chats, Profil, $state, SongLibrary,$window,$ionicModal, $localStorage, $rootScope) {
+    $scope.openSong=function(song){
+      $window.open(song.open_url,"_system");
+    };
+  })
+
   .controller('FavoritesCtrl', function($scope, User, Chats, Profil, $state, SongLibrary,$window,$ionicModal, $localStorage, $rootScope) {
 
     $rootScope.myFavorites = $localStorage.getObject('userFavoriteArray');

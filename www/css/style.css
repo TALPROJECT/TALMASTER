@@ -53,6 +53,31 @@ a{
 .chat-detail-page .lobster-font{  
   font-family: 'Lobster', cursive;
 }
+.image1{
+  width: 40px; 
+    z-index: 10;
+}
+.image2{
+  width: 40px;
+  position: absolute;
+  left: 95px;
+   z-index: -10;
+
+}
+.image3{
+  width: 45px;
+  position: absolute;
+  left: 115px;
+   z-index: -20;
+
+}
+.image4{
+  width: 40px;
+  position: absolute;
+  left: 140px;
+   z-index: -30;
+
+}
 /*LIST DETAIL PAGE */
 .list-detail-page .nomchanson{
   font-size: 3vw;
@@ -345,6 +370,15 @@ display : inline-block;
 .favpage .fav-item{
   color: black;
   margin-top: 5px;
+}
+.icone-play-pause{
+  position: absolute;
+   display: block;
+   font-size: 30px;
+   top: 20px;
+   left: 30px;
+   color:red;
+   font-weight: bold;
 }
 /*ACCOUNT PAGE*/
 

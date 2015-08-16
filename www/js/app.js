@@ -148,6 +148,15 @@
       templateUrl: 'templates/register.html',
       controller: 'RegisterCtrl'
     })
+  .state('tab.song-detail', {
+        url: '/favorites/:chansonId',
+        views: {
+          'tab-favorites': {
+            templateUrl: 'templates/song-detail.html',
+            controller: 'SongDetailCtrl'
+          }
+        }
+      })
     .state('tab.favorites', {
       url: '/favorites',
       views: {
