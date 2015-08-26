@@ -1,9 +1,7 @@
 <ion-view view-title="Favorites" class="favpage" >
 <ion-nav-buttons side="left">
 
-	<div class="grossirboutton ion-ios-minus-outline" ng-click="data.showDelete = !data.showDelete">
-
-	</div>
+	
 </ion-nav-buttons>  
 <ion-nav-buttons side="right">
     <i class ="settingsicon ion-ios-cog-outline" ng-click="openModal()"></i>
@@ -12,9 +10,11 @@
 
     <ion-list show-delete="data.showDelete" >
 
-      <ion-item ng-repeat="song in myFavorites" class="item-avatar itemfav" >
-        	<img ng-src="{{ song.face }}" ng-click="playSong(song)">
-        	 <p ng-click="openSong(song)" class="fav-item"><b >{{ song.name}}</b> - <a class="artist">{{song.artist }}</a> <i class="icon-right ion-chevron-right" ng-click="openSong(song)"></i></p>
+      <ion-item ng-repeat="chanson in myFavorites" class="item-avatar itemfav" >
+        	
+          <img ng-src="{{ chanson.face }}" ng-click="playSong(chanson)"> <i class="ion-ios-play icone-play-pause" ng-if="!isPlaying" ng-click="playSong(chanson)"></i><i class="ion-ios-pause icone-play-pause" ng-if="isPlaying" ng-click="playSong(chanson)"></i>
+        	
+           <p href="#/tab/favorites/{{chanson.id}}" class="fav-item"><b >{{ chanson.name}}</b> - <a class="artist">{{chanson.artist }}</a> <i class="icon-right ion-chevron-right" ng-click="openSong(chanson)"></i></p>
 
         	<ion-option-button class="button-assertive" ng-click="removeSong($index)">
        	    <i class="ion-close-circled deletebutton"  ></i>

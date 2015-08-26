@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "angular-masonry": "~0.11.1",
-    "ngFx": "~1.1.0"
+    "ngFx": "~1.1.0",
+    "angular-video-background": "~0.0.12"
   }
 }

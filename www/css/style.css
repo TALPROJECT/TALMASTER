@@ -7,7 +7,6 @@
   /*font-family: 'Ubuntu', sans-serif;*/
   font-weight: 200;
 }
-
 a{
   text-decoration: none;
 }
@@ -29,6 +28,7 @@ a{
   }
 .mabar{
   background-color: #e8ecf3;
+  height: 42px;
 }
 .favpage .scroll-content, .chat-page .scroll-content {
     background-color: #e8ecf3;
@@ -52,6 +52,13 @@ a{
 }
 .chat-detail-page .lobster-font{  
   font-family: 'Lobster', cursive;
+}
+.chat-detail-page .button-black{
+  background-color: black;
+  color:#f95043;
+}
+.chat-detail-page .ion-chevron-right{
+  color:black;
 }
 .image1{
   width: 40px; 
@@ -185,10 +192,12 @@ z-index: 1;
 }
 
 .tab-dash .coms{
-  margin-top: 65vw;
+  margin-top: 60vw;
   text-align: center;
   font-size: 25px;
   padding-top: 10px;
+  font-weight: 200;
+  color: #f95043;
   
 }
 .tab-dash .coms2{
@@ -196,16 +205,24 @@ z-index: 1;
   text-align: center;
   font-size: 25px;
   padding-top: 10px;
+   font-weight: 200;
+     color: #f95043;
   
 }
 .tab-dash .commentaire{
-  margin-top: -30vw;
+  margin-top: -25vw;
   font-weight: 100;
   color: black;
   height: 620px;
-  background-image: url('../img/guitar.jpg');
+  background-image: url('../img/man.png');
   background-size: cover;
-
+  background-position: center;
+}
+.tab-dash .padding{
+  background-image: url('../img/guitar4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 .tab-dash .lobster-font{
     font-family: 'Lobster', cursive;
@@ -218,9 +235,19 @@ z-index: 1;
   font-size: 25px;
   display: inline-block;
   position : absolute;
-  margin-left: 4vw;
-  margin-top: 4vw;
+  margin-left: 2vw;
+  margin-top: 5vw;
+  color: #f95043;
 }
+.add-title-button{
+  font-size: 25px;
+  display: inline-block;
+  position : absolute;
+  margin-left: 82vw;
+   margin-top: -5vw;
+   color: #f95043
+}
+
 #add-button-in-dash{
   height:25%;
   width:33%;
@@ -250,31 +277,38 @@ width: 80vw;
 display : inline-block;
 }
 .tab-dash .title{
-  font-family: 'Lobster', cursive;
+/*  font-family: 'Lobster', cursive;*/
+font-family: 'Raleway', sans-serif;
+color:white;
 }
 
 .tab-dash .name-playlist{
   line-height: 5px;
   margin-bottom: -25px;
-  color: black;
+  color: white;
   font-family: 'Yanone Kaffeesatz', sans-serif;
   letter-spacing: 0px;
 }
 .tab-dash .item-input-dash input[type="text"] {
     width: 100%;
-    font-family: 'Lobster', cursive;
+   /* font-family: 'Lobster', cursive;*/
+   font-family: 'Raleway', sans-serif;
     text-align: center;
     border-radius: 20px;
     height: 20px;
     display: inline-block;
+    color:white;
   }
 .tab-dash .item-input-list input[type="text"] {
     width: 100%;
-    font-family: 'Lobster', cursive;
+    /*font-family: 'Lobster', cursive;*/
+    font-family: 'Raleway', sans-serif;
     text-align: center;
     border-radius: 20px;
     height: 20px;
     display: inline-block;
+    color: white;
+    border: 1;
   }
 
 .tab-dash .item-input-dash {
@@ -288,15 +322,20 @@ display : inline-block;
 }
 .tab-dash .name-list{
   margin-left: 3vw;
+
 }
 .tab-dash .item-input-list input[type="text"] {
 
-    font-family: 'Lobster', cursive;
+    /*font-family: 'Lobster', cursive;*/
+    font-family: 'Raleway', sans-serif;
     text-align: center;
     border-radius: 20px;
     height: 20px;
     display: inline-block;
     width: 80%;
+    background-color: transparent;
+    color: white;
+    border:1;
 }
 .tab-page .badge.badge-assertive {
     background-color: #FF9696;
@@ -328,24 +367,37 @@ display : inline-block;
 }
 .item-input-dash input[type="text"]{
   width : 100%;
+  background-color: transparent;
+  border: 1;
+
 }
 .send-button-dash{
   position : absolute;
   font-size: 15vw;
   margin-left: 52vw;
+  color: #f95043;
 }
 .clear-button-dash{
   position : absolute;
   font-size: 15vw;
   margin-left: 36vw;
+  color: #f95043;
 }
 .tab-dash .title-list{
   color: black;
-  font-weight: bold;
-  font-family: 'Poiret One', cursive;
+  /*font-weight: bold;*/
+/*  font-family: 'Raleway', sans-serif;*/
   letter-spacing: 0.5px;
 }
-
+.tab-dash .title-of-list{
+    font-size: 20px;
+    margin-left: 13vw;
+    margin-top: -3vw;
+    /*font-family: 'Lobster', cursive;*/
+    color: white;
+    padding: 6px;
+    font-family: 'Raleway', sans-serif;
+}
 /*FAV PAGE*/
 .settingsicon{
 	font-size: 30px;
@@ -389,6 +441,21 @@ display : inline-block;
 .accountpage .lobster-font{
   font-family: 'Lobster', cursive;
 }
+.accountpage .text-fav-song{
+  width: 150px;
+  display: inline-block;
+  padding-top: -3vw;
+}
+
+.accountpage .fav-song-input{
+  display: inline-block;
+  margin-bottom: 1vw;
+}
+.accountpage .fav-song{
+  margin-left: -5px;
+  font-weight: bold;
+  font-style: italic;
+}
 .profilpic{
   width: 100px;
   float: left;
@@ -399,22 +466,29 @@ display : inline-block;
 .accountpage .accounticon{
   font-size: 20px;
 }
+.accountpage .icon-check{
+ 
+  margin-left: -20px
+}
 .email {
   font-size: 15px;
   font-style: italic;
 }
-.logoutbutton{
+.accountpage .logoutbutton{
   font-size: 30px;
   margin-left: 20px;
+  color:#f95043;
 }
 .newfavsong{
   width:40vw;
   text-align: center;
 }
 .favsong{
-
   padding-left: 2vw;
   width: 100vw;
+}
+.accountpage .item{
+  color:black;
 }
 
 /*CONNEXION PAGE*/
@@ -425,8 +499,9 @@ display : inline-block;
 	animation: fadeOutRight 0.5s;
 }
 .homepage_logo{
-	width: 30vw;
-	margin-left: 40vw;
+	width: 50vw;
+	margin-left: 25vw;
+  margin-top: 10vw;
 }
 .homepage_button{
  margin: 0 auto;
@@ -440,18 +515,24 @@ display : inline-block;
   border-radius: 10px;
   text-decoration: none;
   margin-bottom: 10vw;
-  margin-top: 10vw;
+ /* margin-top: 10vw;*/
   width: 40%;
-  border-color: black;
-  color: black;
+  border-color: white;
+  color: white;
   background-color: transparent;
 }
+.homepage_connect{
+   margin-top: 35vw;
+}
+
 .signin-page h1{
 font-family: 'Yanone Kaffeesatz', sans-serif;
  text-align: center;
+ color:white;
+ margin-top: 20vw;
 }
 .signin-page{
-  background-color: #637aa8;
+  background-color: #f95043;
 }
 
 /*LOGIN PAGE*/
@@ -470,13 +551,13 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
   margin-bottom: 10vw;
   margin-top: 10vw;
   width: 40%;
-  border-color: black;
+  border-color: white;
   background-color: transparent;
 }
 .login-view textarea, .login-view input[type="text"], .login-view input[type="password"]{
 	text-align: center;
 	padding-bottom: 15px;
-	color: black;
+	color: white;
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 .loginbutton{
@@ -491,15 +572,17 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size:20px;
   border-radius: 30px;
   text-decoration: none;
-  margin-bottom: 10vw;
-  margin-top: 10vw;
+
   width: 60%;
-  margin-top: 24vw;
-  border-color: black;
-  background-color: #f58d59;  
+  margin-top: 40vw;
+  border-color: white;
+  background-color: #f95043;  
 }
 .login-view{
-	background-color: #637aa8;
+	background-color: black;
+}
+.login-view .mabar{
+  background-color: black;
 }
 .ion-ios-cog-outline{
 	font-size: 35px;
@@ -626,6 +709,11 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
   }
 /*ALL FRIENDS PLAGE*/
 
-.allfriendpage  .ion-chevron-down .icon_modal{
-      font-size: 8vw;
+.allfriendpage .ion-chevron-down .icon_modal{
+      font-size: 15vw;
+}
+.allfriendpage .friendship{
+  color: black;
+  font-size: 20px;
+  font-weight:bold;
 }

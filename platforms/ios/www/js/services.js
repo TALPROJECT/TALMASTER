@@ -102,10 +102,10 @@
         face: 'https://i.scdn.co/image/7241f947ea45d1cd2c9716adc94f85668e511dcf'
       }, {
         id: 5,
-        name: 'Let it Bleed',
+        name: 'Gimme Shelter',
         artist: 'The Rolling Stones',
-        preview_url : 'https://p.scdn.co/mp3-preview/5cb2be9e55a7eff78eeac5f35fb584bb47f444e7',
-        open_url : 'https://open.spotify.com/track/06FcMPcosZg13x2QODDDK6',
+        preview_url : 'https://p.scdn.co/mp3-preview/ad861c37005fdb42298e33725325ecca99edfd5e',
+        open_url : 'https://open.spotify.com/track/1dv3ePjze9tPq2pk8eWJdR',
         face: 'https://i.scdn.co/image/91205a1c80960d7055f8ed1bbe022f195e1767a4'
       }, {
         id: 6,
@@ -135,6 +135,20 @@
         preview_url:'https://p.scdn.co/mp3-preview/687ee71b2d17a374732d4666b608424ebdd8df68',
         open_url : 'https://open.spotify.com/track/7w4Tbkbx081vRJa8ol56Qf',
         face: 'https://i.scdn.co/image/2c8cf891d246b0aadf95a2c483b5b243aeda8a41'
+      }, {
+        id: 10,
+        name: 'Off the Wall',
+        artist: 'Michael Jackson',
+        preview_url:'https://p.scdn.co/mp3-preview/a918dbf573ac4eee31cf7721e4f67ac1d293990f',
+        open_url : 'https://open.spotify.com/track/3zYpRGnnoegSpt3SguSo3W',
+        face: 'https://i.scdn.co/image/de59628f5bb71cd0058186a5d85583dcd7330626'
+      }, {
+        id: 11,
+        name: 'Get Down on It',
+        artist: 'Kool & The Gang',
+        preview_url:'https://p.scdn.co/mp3-preview/9767ce47f5fb56020b7565477fc0f3577033c820',
+        open_url : 'https://open.spotify.com/track/4cdOa74e9tBGA6FaVT5mgc',
+        face: 'https://i.scdn.co/image/3a97b5b2ed27d1320e52c26511bd2bb9c5087bc8'
       }];
 
       return {

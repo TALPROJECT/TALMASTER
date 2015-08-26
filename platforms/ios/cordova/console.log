@@ -60,3 +60,19 @@ Aug  1 17:26:09 MBPdeAlexandre.home rtcreporting[20506] <Debug>: initWithSession
 2015-08-02 16:57:47.406 Bround[23953:4808590] [CDVTimer][TotalPluginStartup] 86.088002ms
 2015-08-02 16:57:47.514 Bround[23953:4808590] Resetting plugins due to page load.
 2015-08-02 16:57:47.859 Bround[23953:4808590] Finished load of: file:///Users/alexandreattia/Library/Developer/CoreSimulator/Devices/7D3271DB-085D-4993-8018-A5A10D176FF8/data/Containers/Bundle/Application/01404E01-CCCF-44BD-845B-395E13962A5B/Bround.app/www/index.html#/tab/dash
+2015-08-22 20:03:16.664 Bround[6093:300186] Apache Cordova native platform version 3.8.0 is starting.
+2015-08-22 20:03:16.667 Bround[6093:300186] Multi-tasking -> Device: YES, App: YES
+2015-08-22 20:03:16.676 Bround[6093:300186] Unlimited access to network resources
+2015-08-22 20:03:16.859 Bround[6093:300186] [CDVTimer][keyboard] 0.051022ms
+2015-08-22 20:03:16.941 Bround[6093:300186] [CDVTimer][splashscreen] 81.427991ms
+2015-08-22 20:03:16.941 Bround[6093:300186] [CDVTimer][TotalPluginStartup] 82.049012ms
+2015-08-22 20:03:17.042 Bround[6093:300186] Resetting plugins due to page load.
+2015-08-22 20:03:17.424 Bround[6093:300186] Finished load of: file:///Users/alexandreattia/Library/Developer/CoreSimulator/Devices/7D3271DB-085D-4993-8018-A5A10D176FF8/data/Containers/Bundle/Application/BCC0DAC6-DB58-4806-90E5-9D561EF37414/Bround.app/www/index.html#/tab/dash
+2015-08-25 18:26:25.155 Bround[10097:745587] Apache Cordova native platform version 3.8.0 is starting.
+2015-08-25 18:26:25.165 Bround[10097:745587] Multi-tasking -> Device: YES, App: YES
+2015-08-25 18:26:25.188 Bround[10097:745587] Unlimited access to network resources
+2015-08-25 18:26:25.695 Bround[10097:745587] [CDVTimer][keyboard] 0.226974ms
+2015-08-25 18:26:25.873 Bround[10097:745587] [CDVTimer][splashscreen] 177.236021ms
+2015-08-25 18:26:25.874 Bround[10097:745587] [CDVTimer][TotalPluginStartup] 179.019988ms
+2015-08-25 18:26:26.412 Bround[10097:745587] Resetting plugins due to page load.
+2015-08-25 18:26:27.555 Bround[10097:745587] Finished load of: file:///Users/alexandreattia/Library/Developer/CoreSimulator/Devices/7D3271DB-085D-4993-8018-A5A10D176FF8/data/Containers/Bundle/Application/6DF8AE8D-B0D1-441D-BB43-EFFEA0C5F8B7/Bround.app/www/index.html#/tab/dash

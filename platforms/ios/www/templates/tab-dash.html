@@ -2,13 +2,17 @@
   <ion-content class="padding">
 <div class="title-bar">
        <label class="item item-input-list name-playlist"> 
-           <a class="title-list">Title :</a><input class="name-list" type="text" placeholder="Name of your playlist">
+           <a class="title-list">Title :</a><input ng-show="!isTitle" class="name-list" type="text" placeholder="Name of your playlist" ng-model="titlelist">
           </input>
+          <p ng-show="isTitle" class="title-of-list">{{currentList.title}}</p>
           </label>
+           <i ng-show="!isTitle" class = "add-title-button ion-checkmark-round" ng-click="addTitle(titlelist)"></i>
+            <i ng-show="isTitle" class = "add-title-button ion-edit" ng-click="editTitle()"></i>
       </div>
+     
     <div class="search-bar">
        <label class="item item-input-dash"> 
-            <input type="text" placeholder="Search your song" ng-model="myId">
+            <input type="text" placeholder="Search for your song" ng-model="myId">
           </input>
           </label>
       </div>
@@ -17,14 +21,14 @@
 
 	<div ng-show="currentList.length==0" class="commentaire" ng-click="moveBigButton()">
   <div class="text-on-blurred-dash">
-		<i id="buttons" class="icon ion-ios-musical-notes music-icon icon-bottom" ></i><br>
+		<!-- <i id="buttons" class="icon ion-ios-musical-notes music-icon icon-bottom" ></i> --><br>
 	 	<p class="coms">Create a <a class="lobster-font">playlist</a>
 		<p class="coms2">of maximum eleven <a class="lobster-font">songs</a>
 </div>
 	</div>
 
 
-	<div collection-repeat="song in currentList" item-height="25%" item-width="33%">
+	<div collection-repeat="song in currentList" item-height="25%" item-width="33%" class="ajout-song">
 <span class="badge badge-assertive" ng-click="removeSong($index)"><i class="ion-close-round badge-delete"></i></span>
     <div back-img="{{song.face}}" ng-click="playSong(song); refreshBlurring($index)" 
     class="image-collection-list base-class animation" ng-class="imageClass[$index]"> </div>

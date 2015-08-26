@@ -5,7 +5,7 @@
   // the 2nd parameter is an array of 'requires'
   // 'starter.services' is found in services.js
   // 'starter.controllers' is found in controllers.js
-  angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','starter.directives', 'ngAnimate'])
+  angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','starter.directives', 'ngAnimate','ngVidBg'])
 
   .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -148,6 +148,15 @@
       templateUrl: 'templates/register.html',
       controller: 'RegisterCtrl'
     })
+  .state('tab.song-detail', {
+        url: '/favorites/:chansonId',
+        views: {
+          'tab-favorites': {
+            templateUrl: 'templates/song-detail.html',
+            controller: 'SongDetailCtrl'
+          }
+        }
+      })
     .state('tab.favorites', {
       url: '/favorites',
       views: {

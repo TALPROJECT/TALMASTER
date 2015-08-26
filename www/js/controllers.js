@@ -1,10 +1,10 @@
   angular.module('starter.controllers', [])
 
-  .controller('DashCtrl', function($scope, $state, Chats, $localStorage, SongLibrary, $ionicModal) {
+  .controller('DashCtrl', function($scope, $state, Chats, $localStorage, SongLibrary, $ionicModal ,$rootScope) {
    
    // ANIMATION DU LOGO MUSIC 
    $scope.bigIcon=false;
-    $scope.moveButtons = function() {
+   $scope.moveButtons = function() {
 
         var buttons = document.getElementById('buttons');
         move(buttons)
@@ -119,6 +119,7 @@
       }
 
       $scope.currentList=[];
+      $scope.isTitle=false;
 
       $scope.swapIndexes = function (array, index1, index2){
         var tempArray = array;
@@ -140,8 +141,24 @@
             face: songToAdd.face});
         }
       }
+      $scope.addTitle=function(mytitle){
+       $scope.currentList.title=mytitle;
+       $scope.isTitle=true;
+      }
+       $scope.editTitle=function(){
+       $scope.currentList.title=null;
+       $scope.isTitle=false;
+       $scope.titlelist="";
+      }
       $scope.clearList=function(){
         $scope.currentList=[];
+        $scope.isTitle=false;
+        $scope.titlelist=null;
+        if ($scope.isPlaying){
+          $scope.media.pause();
+          $scope.isPlaying = false;
+          return null;
+        }
       }
 
       $scope.removeSong=function(index){
@@ -234,6 +251,21 @@
     $scope.openRegister=function(){
       $state.go('register');
     }
+  //
+  // Vidéo en background
+  //
+    $scope.resources = [
+            '../img/record.webm',
+            '*.ogv',
+            '*.mp4',
+            '*.swf'
+        ];
+        $scope.poster = '../img/man.png';
+        $scope.fullScreen = true;
+        $scope.muted = true;
+        $scope.zIndex = '-10';
+        $scope.playInfo = {};
+        $scope.pausePlay = true;
   })
   .controller('LoginCtrl', function($scope,User, $stateParams, $localStorage,$location) {
     $scope.connect=function(user){
@@ -245,7 +277,23 @@
                     $location.path('/tab/dash');
 
   }
+  //
+  // Vidéo en background
+  //
+   $scope.resources = [
+            '../img/record.webm',
+            '*.ogv',
+            '*.mp4',
+            '*.swf'
+        ];
+        $scope.poster = '../img/man.png';
+        $scope.fullScreen = true;
+        $scope.muted = true;
+        $scope.zIndex = '-10';
+        $scope.playInfo = {};
+        $scope.pausePlay = true;
   })
+
   .controller('RegisterCtrl', function($scope, User, $stateParams, $localStorage,$location) {
     $scope.regularConnect=function(user){
       console.log(user);
@@ -347,11 +395,11 @@
   })
   .controller('NewFriendCtrl', function($scope, Chats, $state) {
     })
-  .controller('NewFriendCtrl', function($scope, Chats, $state) {
-    })
-  .controller('ChatDetailCtrl', function($scope, $stateParams, Chats, ListLibrary, SongLibrary,$ionicHistory) {
+
+  .controller('ChatDetailCtrl', function($scope, $stateParams, Chats, ListLibrary, SongLibrary,$ionicHistory,$ionicModal) {
    
     $scope.chat = Chats.get($stateParams.chatId);
+    $scope.chats=Chats.all();
     $scope.lists = ListLibrary.all();
     $scope.chansons = SongLibrary.all();
 
@@ -372,12 +420,35 @@
       $ionicHistory.goBack();
     };
 
+   
+$ionicModal.fromTemplateUrl('templates/sending-to-friends.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal
+    })  
+
+     $scope.forwardList=function(index){
+      $scope.modal.show();
+    }
+
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    };
+
+    $scope.$on('$destroy', function() {
+      $scope.modal.remove();
+    });
+
   })
 
   .controller('ListDetailCtrl', function($scope, $stateParams, User, ListLibrary, SongLibrary, $ionicHistory, $window, $localStorage, $rootScope) {
     
     $scope.list = ListLibrary.get($stateParams.listId);
 
+    $scope.random = function() {
+        return Math.floor(Math.random());
+      };
 
     $scope.chansons=SongLibrary.all();
     
@@ -500,10 +571,13 @@
     $state.go('policy');
   }
   })
-  .controller('SongDetailCtrl', function($scope, User, Chats, Profil, $state, SongLibrary,$window,$ionicModal, $localStorage, $rootScope) {
+  .controller('SongDetailCtrl', function($scope, User, Chats, Profil, $state, $stateParams, SongLibrary,$window,$ionicModal, $localStorage, $rootScope) {
+    $scope.chansons = SongLibrary.all();
+    $scope.chanson = SongLibrary.get($stateParams.chansonId);
     $scope.openSong=function(song){
       $window.open(song.open_url,"_system");
     };
+
   })
 
   .controller('FavoritesCtrl', function($scope, User, Chats, Profil, $state, SongLibrary,$window,$ionicModal, $localStorage, $rootScope) {
@@ -542,14 +616,16 @@
           $scope.showEdit = false;
         
       };
-    $scope.showEditFav = false;
-    $scope.editFavClick = function(){
-      $scope.showEditFav = true;
+
+    $scope.isFavoriteSong = false;
+    $scope.editFavSong = function(){
+      $scope.profils.FavoriteSong="";
+      $scope.isFavoriteSong = false;
     };
     $scope.addNewFav=function(myFav){
         
-          $scope.profils.FavoritedSong=myFav;
-          $scope.showEditFav = false;
+          $scope.profils.FavoriteSong=myFav;
+          $scope.isFavoriteSong = true;
         
       };
   $ionicModal.fromTemplateUrl('templates/tab-account.html', {

@@ -1,0 +1,16 @@
+
+<ion-view view-title="{{chanson.name}}" class="chat-detail-page">
+<ion-nav-buttons >
+    <i class="ion-chevron-left back-icon" style="" ng-click="goBack()"> </i>
+</ion-nav-buttons>
+  <ion-content class="padding">
+    <ion-item class="item-remove-animate item-avatar" type="item-text-wrap" >
+        <img ng-src="{{chanson.face}}">
+        <h2>{{chanson.name}}</h2>
+
+    <p ng-click="openSong(chanson)">Play it on Spotify 
+    <p>Play it on Apple Music
+       
+      </ion-item>
+  </ion-content>
+</ion-view>

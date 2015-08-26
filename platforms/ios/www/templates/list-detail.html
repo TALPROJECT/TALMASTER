@@ -12,7 +12,7 @@
   </ion-nav-buttons>
 
   <ion-content class="has-header padding">
-    <div collection-repeat="song in chansons" item-height="25%" item-width="33%">
+    <div collection-repeat="song in chansons| limitTo: 11 |orderBy:random()"  item-height="25%" item-width="33%">
 
         <div back-img="{{song.face}}" ng-click="playSong(song); refreshBlurring($index)" 
         class="image-collection-list base-class" ng-class="imageClass[$index]"> </div>

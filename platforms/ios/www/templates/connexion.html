@@ -1,7 +1,9 @@
-<ion-view class="signin-page">
+<ion-view class="signin-page" hide-nav-bar="true">
 <div class="background-image"></div>
   <ion-content class="padding">
+  <vid-bg resources="resources" poster="poster" full-screen="fullScreen" muted="muted" z-index="zIndex" play-info="playInfo" pause-play="pausePlay"></vid-bg>
   <div class="container_all">
+
       <img class="homepage_logo" ng-src="img/logo.png"/>
     <div class="mytitle">
       <h1> Identifiez-Vous </h1>
@@ -14,5 +16,6 @@
   </button>
   <p class="err_container"> {{err}} </p>
   </div>
+  <br>
   </ion-content>
 </ion-view>
