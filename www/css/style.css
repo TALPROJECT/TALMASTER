@@ -171,6 +171,7 @@ z-index: 1;
     border-radius: 10px;
   }
 .tab-dash .text-on-blurred-image{
+  background-color: red;
   position: relative;
   z-index: 0;
   margin-top: -25vw;
@@ -214,12 +215,11 @@ z-index: 1;
   font-weight: 100;
   color: black;
   height: 620px;
-  background-image: url('../img/man.png');
+  background-color: #353434;
   background-size: cover;
   background-position: center;
 }
 .tab-dash .padding{
-  background-image: url('../img/guitar4.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -293,22 +293,12 @@ color:white;
     width: 100%;
    /* font-family: 'Lobster', cursive;*/
    font-family: 'Raleway', sans-serif;
-    text-align: center;
+    text-align: left;
+    margin-left: 20px;
     border-radius: 20px;
     height: 20px;
     display: inline-block;
     color:white;
-  }
-.tab-dash .item-input-list input[type="text"] {
-    width: 100%;
-    /*font-family: 'Lobster', cursive;*/
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    border-radius: 20px;
-    height: 20px;
-    display: inline-block;
-    color: white;
-    border: 1;
   }
 
 .tab-dash .item-input-dash {
@@ -328,7 +318,7 @@ color:white;
 
     /*font-family: 'Lobster', cursive;*/
     font-family: 'Raleway', sans-serif;
-    text-align: center;
+    text-align: left;
     border-radius: 20px;
     height: 20px;
     display: inline-block;
@@ -397,6 +387,41 @@ color:white;
     color: white;
     padding: 6px;
     font-family: 'Raleway', sans-serif;
+}
+.tab-dash .padding {
+    background-color: #353434;
+    }
+
+.tab-dash .musique-icon{
+
+  position: right;
+  margin-left: 21em;
+  display: inline-block;
+  margin-top: -40px;
+}
+.tab-dash .send-it{
+  display: block;
+  font-family: 'Lobster', cursive;
+  font-size: 17px;
+  margin-top: -45px;
+  margin-left: 16em;
+  color: white;
+}
+.tab-dash .bubble-icon{
+ 
+  position: right;
+
+  margin-left: 10px;
+  display: inline-block;
+  margin-top: -43px;
+
+}
+.tab-dash .comment-it{
+  display: block;
+  font-family: 'Lobster', cursive;
+  font-size: 10px;
+  margin-left: 25px;
+  color: white;
 }
 /*FAV PAGE*/
 .settingsicon{

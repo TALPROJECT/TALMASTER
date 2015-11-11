@@ -22,12 +22,15 @@
         <h3 class="email"> {{profils.email}} </h3>
         <br><br>
         <ion-list>
-        <ion-item><i class="ion-music-note accounticon"></i>  My Favorite Song is <a class="lobster-font">{{profils.FavoritedSong}}</a> <a class="ion-edit" ng-click="editFavClick()"> </a>  </ion-item>
-         
-         <label class="item item-input" ng-show="showEditFav">
-          <span class="input-label"> Your Favorite Song</span>
-            <input type="text" ng-model="myFav"> <a class = "ion-ios-color-wand" ng-click="addNewFav(myFav)"> </a>
-          </label>
+        <ion-item><i class="ion-music-note accounticon"></i> <a class="text-fav-song"> My Favorite Song is </a>
+        <input ng-show="!isFavoriteSong" class="fav-song-input" type="text" placeholder="Write here" ng-model="favsong"></input> 
+        <a ng-show="isFavoriteSong" class="fav-song"> {{profils.FavoriteSong}} </a> 
+
+            <i ng-show="!isFavoriteSong" class = "add-fav-button ion-checkmark-round icon-check" ng-click="addNewFav(favsong)"></i>
+            <i ng-show="isFavoriteSong" class = "add-fav-button ion-edit" ng-click="editFavSong()"></i>
+      </ion-item>
+          
+  
      
          
           <ion-item><i class="ion-information accounticon"></i>  Conditions of use <i class="ion-chevron-right" ng-click="goPolicy()"></i></ion-item>

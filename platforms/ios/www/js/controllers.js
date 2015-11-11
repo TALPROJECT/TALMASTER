@@ -396,9 +396,10 @@
   .controller('NewFriendCtrl', function($scope, Chats, $state) {
     })
 
-  .controller('ChatDetailCtrl', function($scope, $stateParams, Chats, ListLibrary, SongLibrary,$ionicHistory) {
+  .controller('ChatDetailCtrl', function($scope, $stateParams, Chats, ListLibrary, SongLibrary,$ionicHistory,$ionicModal) {
    
     $scope.chat = Chats.get($stateParams.chatId);
+    $scope.chats=Chats.all();
     $scope.lists = ListLibrary.all();
     $scope.chansons = SongLibrary.all();
 
@@ -418,6 +419,26 @@
       console.log('ici');
       $ionicHistory.goBack();
     };
+
+   
+$ionicModal.fromTemplateUrl('templates/sending-to-friends.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal
+    })  
+
+     $scope.forwardList=function(index){
+      $scope.modal.show();
+    }
+
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    };
+
+    $scope.$on('$destroy', function() {
+      $scope.modal.remove();
+    });
 
   })
 
@@ -595,14 +616,16 @@
           $scope.showEdit = false;
         
       };
-    $scope.showEditFav = false;
-    $scope.editFavClick = function(){
-      $scope.showEditFav = true;
+
+    $scope.isFavoriteSong = false;
+    $scope.editFavSong = function(){
+      $scope.profils.FavoriteSong="";
+      $scope.isFavoriteSong = false;
     };
     $scope.addNewFav=function(myFav){
         
-          $scope.profils.FavoritedSong=myFav;
-          $scope.showEditFav = false;
+          $scope.profils.FavoriteSong=myFav;
+          $scope.isFavoriteSong = true;
         
       };
   $ionicModal.fromTemplateUrl('templates/tab-account.html', {

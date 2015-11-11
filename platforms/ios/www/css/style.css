@@ -7,7 +7,6 @@
   /*font-family: 'Ubuntu', sans-serif;*/
   font-weight: 200;
 }
-
 a{
   text-decoration: none;
 }
@@ -29,6 +28,7 @@ a{
   }
 .mabar{
   background-color: #e8ecf3;
+  height: 42px;
 }
 .favpage .scroll-content, .chat-page .scroll-content {
     background-color: #e8ecf3;
@@ -52,6 +52,13 @@ a{
 }
 .chat-detail-page .lobster-font{  
   font-family: 'Lobster', cursive;
+}
+.chat-detail-page .button-black{
+  background-color: black;
+  color:#f95043;
+}
+.chat-detail-page .ion-chevron-right{
+  color:black;
 }
 .image1{
   width: 40px; 
@@ -434,6 +441,21 @@ color:white;
 .accountpage .lobster-font{
   font-family: 'Lobster', cursive;
 }
+.accountpage .text-fav-song{
+  width: 150px;
+  display: inline-block;
+  padding-top: -3vw;
+}
+
+.accountpage .fav-song-input{
+  display: inline-block;
+  margin-bottom: 1vw;
+}
+.accountpage .fav-song{
+  margin-left: -5px;
+  font-weight: bold;
+  font-style: italic;
+}
 .profilpic{
   width: 100px;
   float: left;
@@ -444,22 +466,29 @@ color:white;
 .accountpage .accounticon{
   font-size: 20px;
 }
+.accountpage .icon-check{
+ 
+  margin-left: -20px
+}
 .email {
   font-size: 15px;
   font-style: italic;
 }
-.logoutbutton{
+.accountpage .logoutbutton{
   font-size: 30px;
   margin-left: 20px;
+  color:#f95043;
 }
 .newfavsong{
   width:40vw;
   text-align: center;
 }
 .favsong{
-
   padding-left: 2vw;
   width: 100vw;
+}
+.accountpage .item{
+  color:black;
 }
 
 /*CONNEXION PAGE*/

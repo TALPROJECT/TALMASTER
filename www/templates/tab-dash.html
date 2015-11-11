@@ -2,22 +2,27 @@
   <ion-content class="padding">
 <div class="title-bar">
        <label class="item item-input-list name-playlist"> 
-           <a class="title-list">Title :</a><input ng-show="!isTitle" class="name-list" type="text" placeholder="Name of your playlist" ng-model="titlelist">
+          <img ng-src='../img/icon/quotes.png'/ width='20px'>
+          <input ng-show="!isTitle" class="name-list" type="text" placeholder="Name your playlist" ng-model="titlelist">
           </input>
           <p ng-show="isTitle" class="title-of-list">{{currentList.title}}</p>
           </label>
-           <i ng-show="!isTitle" class = "add-title-button ion-checkmark-round" ng-click="addTitle(titlelist)"></i>
-            <i ng-show="isTitle" class = "add-title-button ion-edit" ng-click="editTitle()"></i>
+        
       </div>
      
     <div class="search-bar">
-       <label class="item item-input-dash"> 
-            <input type="text" placeholder="Search for your song" ng-model="myId">
+     <label class="item item-input-dash"> 
+                <img ng-src='../img/icon/search.png'/ width='20px'> <input type="text" placeholder="Search for your song" ng-model="myId">
           </input>
           </label>
       </div>
 	<div class = "add-song-button ion-android-add-circle" ng-click="addNewSong(myId)"> 
     </div>
+    <a ng-hide="currentList.length==0" class="comment-it">Don't be shy,</a> 
+    <a ng-hide="currentList.length==0" class="comment-it">comment it</a>
+     <img ng-src="../img/icon/bubble.png" ng-hide="currentList.length==0" width="85px" class="bubble-icon"/>
+    <a ng-hide="currentList.length==0" class="send-it">Send It</a>
+     <img ng-src="../img/icon/musique2.png" ng-hide="currentList.length==0" width="70px" class="musique-icon"/>
 
 	<div ng-show="currentList.length==0" class="commentaire" ng-click="moveBigButton()">
   <div class="text-on-blurred-dash">
